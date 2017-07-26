@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/divider"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/titlebar_register"></include>
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/register_tele"
+            android:textColor="@color/primary_text"
+            android:hint="请输入手机号"
+            android:textColorHint="@color/hint_text"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <ImageView
+            android:src="@mipmap/register_icon_tele"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+        <View
+            android:background="@color/divider"
+            android:layout_below="@+id/register_tele"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/register_code"
+            android:textColor="@color/primary_text"
+            android:hint="请输入手机验证码"
+            android:textColorHint="@color/hint_text"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <ImageView
+            android:src="@mipmap/register_icon_code"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+        <Button
+            android:text="获取验证码"
+            android:textSize="12sp"
+            android:textColor="@color/primary_white_text"
+            android:background="@drawable/register_btn"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_width="120dp"
+            android:layout_height="42dp" />
+
+        <View
+            android:background="@color/divider"
+            android:layout_below="@+id/register_code"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/register_pwd"
+            android:textColor="@color/primary_text"
+            android:inputType="numberPassword"
+            android:hint="请输入密码"
+            android:textColorHint="@color/hint_text"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <ImageView
+            android:src="@mipmap/register_icon_pwd"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+        <View
+            android:background="@color/divider"
+            android:layout_below="@+id/register_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+    </RelativeLayout>
+
+    <Button
+        android:text="注册"
+        android:textColor="@color/primary_white_text"
+        android:textSize="18sp"
+        android:background="@drawable/login_btn"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:layout_width="280dp"
+        android:layout_height="48dp" />
+
+</LinearLayout>

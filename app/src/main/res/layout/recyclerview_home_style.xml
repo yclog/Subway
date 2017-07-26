@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/Whitecolorbackground"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:background="@color/Whitecolorbackground"
+        android:layout_width="match_parent"
+        android:layout_height="172dp">
+
+        <ImageView
+            android:id="@+id/home_src"
+            android:src="@color/colorPrimary"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/home_title"
+            android:text="三号线一期全线贯穿"
+            android:textSize="16sp"
+            android:textColor="@color/primary_text_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="12dp"/>
+
+        <ImageView
+            android:id="@+id/home_thumb"
+            android:src="@mipmap/home_style_listview_thumb"
+            android:padding="4dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_toLeftOf="@+id/home_thumb_text"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="2dp"/>
+
+        <TextView
+            android:id="@+id/home_thumb_text"
+            android:text="25"
+            android:textColor="@color/secondary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/home_date"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="7dp"
+            android:layout_marginRight="26dp"/>
+
+        <TextView
+            android:id="@+id/home_date"
+            android:text="04-21"
+            android:textColor="@color/secondary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/home_time"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"/>
+
+        <TextView
+            android:id="@+id/home_time"
+            android:text="17:50"
+            android:textColor="@color/secondary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/Shadowcolorbackgrounds"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/titlebar_personal_info"></include>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"></View>
+
+    <include
+        android:id="@+id/personal_info_avatar"
+        layout="@layout/personal_info_avatar"></include>
+
+    <include
+        android:id="@+id/personal_info_nickname"
+        layout="@layout/personal_info_nickname"></include>
+
+    <include
+        android:id="@+id/personal_info_birth"
+        layout="@layout/personal_info_birth"></include>
+
+</LinearLayout>

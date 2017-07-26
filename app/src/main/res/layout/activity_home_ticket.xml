@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ticket_relativelayout"
+    android:background="@color/Whitecolorbackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/titlebar_home_ticket"></include>
+
+        <include layout="@layout/subheader_ticket"></include>
+
+        <com.self.ylog.subway.View.PaintView
+            android:background="@drawable/paint_border"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="80dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <include layout="@layout/activity_home_ticket_bottom_sheet"></include>
+</android.support.design.widget.CoordinatorLayout>

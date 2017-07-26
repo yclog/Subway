@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/Shadowcolorbackgrounds"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/titlebar_personal_setting_changepwd"></include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/changepwd_oldpwd"
+            android:textColor="@color/primary_text"
+            android:inputType="numberPassword"
+            android:background="@drawable/edittext_shape"
+            android:hint="请输入旧密码"
+            android:textColorHint="@color/hint_text"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <ImageView
+            android:src="@mipmap/changepwd_icon_key"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <View
+            android:background="@color/divider"
+            android:layout_below="@+id/register_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/changepwd_newpwd"
+            android:textColor="@color/primary_text"
+            android:inputType="numberPassword"
+            android:background="@drawable/edittext_shape"
+            android:hint="请输入新密码"
+            android:textColorHint="@color/hint_text"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <ImageView
+            android:src="@mipmap/changepwd_icon_key"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <View
+            android:background="@color/divider"
+            android:layout_below="@+id/register_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/changepwd_verfiypwd"
+            android:textColor="@color/primary_text"
+            android:inputType="numberPassword"
+            android:background="@drawable/edittext_shape"
+            android:hint="请确认密码"
+            android:textColorHint="@color/hint_text"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <ImageView
+            android:src="@mipmap/changepwd_icon_key"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <View
+            android:background="@color/divider"
+            android:layout_below="@+id/register_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+    </RelativeLayout>
+
+    <Button
+        android:text="修改密码"
+        android:textColor="@color/primary_white_text"
+        android:textSize="18sp"
+        android:background="@drawable/login_btn"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:layout_width="280dp"
+        android:layout_height="42dp" />
+
+
+</LinearLayout>

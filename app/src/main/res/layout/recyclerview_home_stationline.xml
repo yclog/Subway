@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/Shadowcolorbackgrounds"
+    android:layout_height="wrap_content">
+
+    <View
+        android:background="@drawable/recyclerview_stationline"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"></View>
+
+    <TextView
+        android:id="@+id/stationline_text"
+        android:text="一号线"
+        android:textSize="18sp"
+        android:textColor="@color/primary_black_text"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/stationline_arrow"
+        android:src="@mipmap/menu_right_arrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="8dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

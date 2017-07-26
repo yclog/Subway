@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/Whitecolorbackground"
+    android:id="@+id/pay_dialog"
+    android:layout_marginLeft="32dp"
+    android:layout_marginRight="32dp"
+    android:layout_height="120dp">
+
+    <TextView
+        android:id="@+id/buy_ticket_text"
+        android:text="地铁票购买"
+        android:textSize="16sp"
+        android:textColor="@color/primary_text"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/buy_ticket_text_secondary"
+        android:text="test"
+        android:textSize="18sp"
+        android:textColor="@color/primary_text"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

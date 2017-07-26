@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.self.ylog.subway">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/hugh"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.self.ylog.subway.Activity.MainActivity_Home">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.MainActivity_Login"></activity>
+        <activity android:name=".Activity.MainActivity_Register"></activity>
+        <activity android:name=".Activity.HomeActivity_Scan"></activity>
+        <activity android:name=".Activity.HomeActivity_Ticket"></activity>
+        <activity android:name=".Activity.HomeActivity_Ticket_PickStart"></activity>
+        <activity android:name=".Activity.HomeActivity_Ticket_PickEnd"></activity>
+        <activity android:name=".Activity.HomeActivity_Ticket_Content"></activity>
+        <activity android:name=".Activity.HomeActivity_Transportation"></activity>
+        <activity android:name=".Activity.HomeActivity_Museum"></activity>
+        <activity android:name=".Activity.HomeActivity_TimeTable"></activity>
+        <activity android:name=".Activity.HomeActivity_Road"></activity>
+        <activity android:name=".Activity.HomeActivity_WiFi"></activity>
+        <activity android:name=".Activity.HomeActivity_LiveStream"></activity>
+        <activity android:name=".Activity.SubwayActivity_News"></activity>
+        <activity android:name=".Activity.SubwayActivity_Price"></activity>
+        <activity android:name=".Activity.SubwayActivity_Info"></activity>
+        <activity android:name=".Activity.SubwayActivity_Law"></activity>
+        <activity android:name=".Activity.SubwayActivity_Secure"></activity>
+        <activity android:name=".Activity.SubwayActivity_ByTrain"></activity>
+        <activity android:name=".Activity.LifeActivity_Favour"></activity>
+        <activity android:name=".Activity.LifeActivity_Literature"></activity>
+        <activity android:name=".Activity.LifeActivity_Travel"></activity>
+        <activity android:name=".Activity.LifeActivity_Gourmet"></activity>
+        <activity android:name=".Activity.LifeActivity_City"></activity>
+        <activity android:name=".Activity.PersonalActivity_Setting"></activity>
+        <activity android:name=".Activity.PersonalActivity_Setting_ChangePwd"></activity>
+        <activity android:name=".Activity.PersonalActivity_Setting_ChangePhone"></activity>
+        <activity android:name=".Activity.PersonalActivity_Info"></activity>
+        <activity android:name=".Activity.PersonalActivity_Info_nickname"></activity>
+        <activity android:name=".Activity.PersonalActivity_Info_Birth"></activity>
+        <activity android:name=".Activity.PersonalActivity_Wallet"></activity>
+        <activity android:name=".Activity.PersonalActivity_Wallet_Payment"></activity>
+        <activity android:name=".Activity.PersonalActivity_Wallet_Balance"></activity>
+        <activity android:name=".Activity.PersonalActivity_Wallet_Coupon"></activity>
+        <activity android:name=".Activity.PersonalActivity_Order"></activity>
+        <activity android:name=".Activity.PersonalActivity_Coupon"></activity>
+        <activity android:name=".Activity.PersonalActivity_Pointsmall"></activity>
+        <activity android:name=".Activity.PersonalActivity_Notification"></activity>
+        <activity android:name=".Activity.PersonalActivity_Feedback"></activity>
+        <activity android:name=".Activity.PersonalActivity_AboutUs"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/Shadowcolorbackgrounds"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/titlebar_personal_wallet_payment"></include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <ImageView
+            android:id="@+id/payment_icon_info"
+            android:src="@mipmap/payment_icon_info"
+            android:layout_toLeftOf="@+id/item_secondary_text"
+            android:layout_centerVertical="true"
+            android:layout_width="12dp"
+            android:layout_height="12dp" />
+
+        <TextView
+            android:id="@+id/item_secondary_text"
+            android:textSize="12sp"
+            android:text="支付方式说明"
+            android:textColor="@color/secondary_text"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/payment_card_alipay"></include>
+
+            <include layout="@layout/payment_card_wechatpay"></include>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/Whitecolorbackground"
+    android:layout_height="48dp">
+
+    <ImageView
+        android:id="@+id/menu_icon"
+        android:src="@mipmap/wallet_icon_pay"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_width="20dp"
+        android:layout_height="16dp" />
+
+    <TextView
+        android:id="@+id/menu_body_primary"
+        android:text="支付方式"
+        android:textSize="14sp"
+        android:textColor="@color/primary_text"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/menu_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"/>
+
+    <ImageView
+        android:src="@mipmap/wallet_icon_alipay"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/menu_body_secondary"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginRight="8dp"/>
+
+    <TextView
+        android:id="@+id/menu_body_secondary"
+        android:text="支付宝免密支付"
+        android:textColor="@color/secondary_text"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/menu_right_arrow"
+        android:layout_marginRight="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/menu_right_arrow"
+        android:src="@mipmap/menu_right_arrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="8dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"/>
+
+    <View
+        android:id="@+id/menu_divider"
+        android:background="@color/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"></View>
+
+</RelativeLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/Shadowcolorbackgrounds"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/titlebar_personal_wallet"></include>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"></View>
+
+    <include
+        android:id="@+id/personal_wallet_payment"
+        layout="@layout/personal_wallet_item_pay"></include>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"></View>
+
+    <include
+        android:id="@+id/personal_wallet_balance"
+        layout="@layout/personal_wallet_item_balance"></include>
+
+    <include
+        android:id="@+id/personal_wallet_card"
+        layout="@layout/personal_wallet_item_card"></include>
+
+    <include
+        android:id="@+id/personal_wallet_coupon"
+        layout="@layout/personal_wallet_item_coupon"></include>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"></View>
+
+    <include
+        android:id="@+id/personal_wallet_safe"
+        layout="@layout/personal_wallet_item_safe"></include>
+
+    <include
+        android:id="@+id/personal_wallet_receipt"
+        layout="@layout/personal_wallet_item_receipt"></include>
+</LinearLayout>

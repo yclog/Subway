@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/Shadowcolorbackgrounds"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/titlebar_personal_setting_changephone"></include>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"></View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/changephone_phonenum"
+            android:textColor="@color/primary_text"
+            android:background="@drawable/edittext_shape"
+            android:hint="请输入手机号"
+            android:textColorHint="@color/hint_text"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <ImageView
+            android:src="@mipmap/register_icon_tele"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <View
+            android:background="@color/divider"
+            android:layout_below="@+id/register_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/changephone_code"
+            android:textColor="@color/primary_text"
+            android:background="@drawable/edittext_shape"
+            android:hint="请输入手机验证码"
+            android:textColorHint="@color/hint_text"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <ImageView
+            android:src="@mipmap/register_icon_code"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <Button
+            android:id="@+id/changephone_code_btn"
+            android:text="获取验证码"
+            android:textSize="12sp"
+            android:textColor="@color/primary_white_text"
+            android:background="@drawable/register_btn"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_width="120dp"
+            android:layout_height="42dp" />
+
+        <View
+            android:background="@color/divider"
+            android:layout_below="@+id/register_code"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+    </RelativeLayout>
+
+    <Button
+        android:text="修改手机号码"
+        android:textColor="@color/primary_white_text"
+        android:textSize="18sp"
+        android:background="@drawable/login_btn"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:layout_width="280dp"
+        android:layout_height="48dp" />
+
+</LinearLayout>

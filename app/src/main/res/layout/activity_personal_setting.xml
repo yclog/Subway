@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/Shadowcolorbackgrounds"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/titlebar_personal_setting"></include>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"></View>
+
+    <include
+        android:id="@+id/personal_setting_changelanguage"
+        layout="@layout/personal_setting_item_language"></include>
+
+    <include
+        android:id="@+id/personal_setting_changephone"
+        layout="@layout/personal_setting_item_changephone"></include>
+
+    <include
+        android:id="@+id/personal_setting_exit"
+        layout="@layout/personal_setting_item_logout"></include>
+
+    <include
+        android:id="@+id/personal_setting_changpwd"
+        layout="@layout/personal_setting_item_changepwd"></include>
+
+    <include layout="@layout/personal_setting_item_message"></include>
+
+    <Button
+        android:id="@+id/personal_setting_logout"
+        android:text="退出登录"
+        android:textColor="@color/colorPrimary"
+        android:background="@color/Whitecolorbackground"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="42dp" />
+
+</LinearLayout>

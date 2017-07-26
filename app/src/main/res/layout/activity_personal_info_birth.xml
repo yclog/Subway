@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/Shadowcolorbackgrounds"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/titlebar_personal_info_birth"></include>
+
+    <Button
+        android:id="@+id/personal_info_birth_btn"
+        android:text="请选择您的生日"
+        android:textSize="18sp"
+        android:textColor="@color/primary_text"
+        android:background="@drawable/accent_btn"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

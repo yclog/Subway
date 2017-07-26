@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:background="@color/Whitecolorbackground"
+android:layout_width="match_parent"
+android:layout_height="56dp">
+
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="?attr/colorPrimary"
+    android:fitsSystemWindows="true"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"></android.support.v7.widget.Toolbar>
+
+<RelativeLayout
+    android:id="@+id/search_station"
+    android:layout_width="240dp"
+    android:layout_height="28dp"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true">
+
+    <View
+        android:background="@drawable/search_station_shape"
+        android:layout_width="240dp"
+        android:layout_height="28dp"></View>
+
+    <ImageView
+        android:src="@mipmap/location"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginLeft="6dp"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/pick_start"
+        android:text="选择起点"
+        android:textSize="12sp"
+        android:clickable="true"
+        android:textColor="@color/primary_white_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="25dp"/>
+
+    <ImageView
+        android:id="@+id/trans"
+        android:src="@mipmap/trans"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:src="@mipmap/location"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginRight="4dp"
+        android:layout_toLeftOf="@+id/pick_end"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/pick_end"
+        android:text="选择终点站"
+        android:textSize="12sp"
+        android:textColor="@color/primary_white_text"
+        android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>
+
+<ImageView
+    android:id="@+id/icon_home"
+    android:src="@mipmap/titlebar_home"
+    android:layout_width="28dp"
+    android:layout_height="28dp"
+    android:layout_marginLeft="16dp"
+    android:layout_centerVertical="true"
+    android:layout_alignParentLeft="true"/>
+
+</RelativeLayout>

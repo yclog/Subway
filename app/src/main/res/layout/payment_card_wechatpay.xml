@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/divider"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:background="@drawable/card_wrchatpay"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"></ImageView>
+
+    <ImageView
+        android:src="@mipmap/payment_card_icon_wechatpay"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="90dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp" />
+
+    <TextView
+        android:text="微信免密支付"
+        android:textColor="@color/primary_white_text"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
+    <TextView
+        android:text="默认"
+        android:textColor="@color/primary_white_text"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:src="@mipmap/card_icon_add"
+        android:visibility="visible"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="58dp"
+        android:layout_marginTop="74dp"
+        android:layout_width="18dp"
+        android:layout_height="18dp" />
+    
+    <TextView
+        android:id="@+id/card_open_text"
+        android:text="已开通"
+        android:textColor="@color/primary_white_text"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="98dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:src="@mipmap/card_icon_right_arrow"
+        android:visibility="invisible"
+        android:layout_marginTop="96dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="22dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp" />
+
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:background="@color/Whitecolorbackground"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/main_viewpager"
+            android:layout_marginBottom="57dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v4.view.ViewPager>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_above="@+id/menu_fragment">
+        </View>
+
+        <fragment
+            android:id="@+id/menu_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:name="com.self.ylog.subway.Fragment.BottonMenuFragment"
+            tools:layout="@layout/bottom_menu"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+        </fragment>
+
+</RelativeLayout>

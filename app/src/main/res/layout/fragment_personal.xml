@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/Whitecolorbackground"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <include layout="@layout/titlebar_personal"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/subheader_personal"></include>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="@color/subhead_divider"
+                ></View>
+
+            <include
+                android:id="@+id/personal_menu_wallet"
+                layout="@layout/personal_menu_item_wallet"></include>
+
+            <include
+                android:id="@+id/personal_menu_order"
+                layout="@layout/personal_menu_item_order"></include>
+
+            <include
+                android:id="@+id/personal_menu_vip"
+                layout="@layout/personal_menu_item_vip"></include>
+
+            <include
+                android:id="@+id/personal_menu_coupon"
+                layout="@layout/personal_menu_item_coupon"></include>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="@color/subhead_divider"
+                ></View>
+
+            <include
+                android:id="@+id/personal_menu_pointsmall"
+                layout="@layout/personal_menu_item_pointsmall"></include>
+
+            <include
+                android:id="@+id/personal_menu_collet"
+                layout="@layout/personal_menu_item_collect"></include>
+
+            <include
+                android:id="@+id/personal_menu_mynotification"
+                layout="@layout/personal_menu_item_mynotification"></include>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="@color/subhead_divider"
+                ></View>
+
+            <include
+                android:id="@+id/personal_menu_feedback"
+                layout="@layout/personal_menu_item_feedback"></include>
+
+            <include
+                android:id="@+id/personal_menu_aboutus"
+                layout="@layout/personal_menu_item_aboutus"></include>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="@color/subhead_divider"
+                ></View>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

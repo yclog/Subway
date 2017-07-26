@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/Whitecolorbackground"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="80dp">
+        <RelativeLayout
+            android:id="@+id/home_ticket"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@mipmap/home_subhead_icon_ticket"
+                android:padding="4dp"
+                android:layout_width="60dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"/>
+            <TextView
+                android:text="购票"
+                android:textSize="14sp"
+                android:textColor="@color/primary_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/home_transportion"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@mipmap/home_subhead_icon_transportation"
+                android:padding="6dp"
+                android:layout_width="60dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"/>
+            <TextView
+                android:text="乘车指南"
+                android:textSize="14sp"
+                android:textColor="@color/primary_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/home_museum"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@mipmap/home_subhead_icon_museum"
+                android:padding="4dp"
+                android:layout_width="60dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"/>
+            <TextView
+                android:text="博物馆预约"
+                android:textSize="14sp"
+                android:textColor="@color/primary_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/home_stationinfo"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@mipmap/home_subhead_icon_stationinfo"
+                android:padding="6dp"
+                android:layout_width="60dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"/>
+            <TextView
+                android:text="站点信息"
+                android:textSize="14sp"
+                android:textColor="@color/primary_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/home_timetable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="38dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:padding="6dp"
+                android:src="@mipmap/home_subhead_icon_timetable" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:text="时刻表"
+                android:textColor="@color/primary_text"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/home_road"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="38dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:padding="4dp"
+                android:src="@mipmap/home_subhead_icon_road" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:text="线路图"
+                android:textColor="@color/primary_text"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/home_wifi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="38dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:padding="6dp"
+                android:src="@mipmap/home_subhead_icon_wifi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:text="地铁wifi"
+                android:textColor="@color/primary_text"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/home_livestream"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="38dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:padding="6dp"
+                android:src="@mipmap/home_subhead_icon_livestream" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:text="客流实况"
+                android:textColor="@color/primary_text"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

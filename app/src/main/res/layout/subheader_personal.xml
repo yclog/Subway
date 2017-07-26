@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="72dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/colorPrimary"></View>
+
+    <com.self.ylog.subway.View.CircleImageView
+        android:id="@+id/subhead_personal_avatar"
+        android:src="@mipmap/hugh"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/colorPrimaryLight"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="24dp"/>
+
+    <TextView
+        android:id="@+id/subhead_personal_nickname"
+        android:text="Deer"
+        android:textSize="16sp"
+        android:textColor="@color/primary_white_text"
+        android:layout_toRightOf="@+id/subhead_personal_avatar"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_below="@+id/subhead_personal_nickname"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/subhead_personal_avatar">
+
+        <TextView
+            android:id="@+id/subhead_personal_info"
+            android:text="个人信息"
+            android:textSize="14sp"
+            android:textColor="@color/primary_white_text"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@mipmap/subhead_right_arrow"
+            android:layout_toRightOf="@id/subhead_personal_info"
+            android:layout_centerVertical="true"
+            android:layout_width="22dp"
+            android:layout_height="22dp" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
