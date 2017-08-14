@@ -8,9 +8,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import com.self.ylog.subway.Activity.HomeActivity_LiveStream;
@@ -25,6 +27,9 @@ import com.self.ylog.subway.Adapter.HomeViewpagerAdapter;
 import com.self.ylog.subway.Adapter.RecyclerViewHomeAdapter;
 import com.self.ylog.subway.R;
 import com.self.ylog.subway.Utils.ItemHomeData;
+import com.self.ylog.subway.Utils.LayoutParam;
+import com.self.ylog.subway.View.TestRecylerView;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -42,7 +47,7 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
     private ViewPager mHomeAdViewPager;
     private ArrayList<ImageView> ImageList;
     //RecyclerView
-    private RecyclerView mHomeRecyclerView;
+    private TestRecylerView mHomeRecyclerView;
     private RecyclerViewHomeAdapter mHomeRecyclerViewAdapter;
     private List<ItemHomeData> mDataList;
     //viewpager设置定时转换
@@ -174,10 +179,26 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
 
     public void init_RecyclerView(View view){
         initDataList();
-        mHomeRecyclerView=(RecyclerView) view.findViewById(R.id.Home_RecyclerView);
+        mHomeRecyclerView=(TestRecylerView) view.findViewById(R.id.Home_RecyclerView);
         mHomeRecyclerViewAdapter =new RecyclerViewHomeAdapter(getContext(),mDataList);
         mHomeRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mHomeRecyclerView.setAdapter(mHomeRecyclerViewAdapter);
+        setHeaderHeight(mHomeRecyclerView);
+    }
+
+    //设置当前HeaderBody底部位置进入LayoutParam类
+    public void setHeaderHeight(final RecyclerView mHomeRecyclerView){
+        ViewTreeObserver mVto = mHomeRecyclerView.getViewTreeObserver();
+        mVto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                mHomeRecyclerView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                LayoutParam.getInstance().setHomeHeaderHeight(mHomeRecyclerView.getHeight());
+                LayoutParam.getInstance().setHomeHeaderBottom(mHomeRecyclerView.getBottom());
+                Log.d("test", "HomeFragment: "+LayoutParam.getInstance().getHomeHeaderBottom());
+                Log.d("test", "HomeFragment: "+LayoutParam.getInstance());
+            }
+        });
     }
 
     public void initDataList(){

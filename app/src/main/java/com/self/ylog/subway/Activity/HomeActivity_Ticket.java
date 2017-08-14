@@ -29,6 +29,7 @@ import com.google.zxing.qrcode.QRCodeWriter;
 import com.self.ylog.subway.Adapter.RecyclerViewTicketAdapter;
 import com.self.ylog.subway.R;
 import com.self.ylog.subway.Utils.ItemStationData;
+import com.self.ylog.subway.Utils.LayoutParam;
 
 import static com.self.ylog.subway.Utils.DebugTag.BUYSTATIONDATA;
 import static com.self.ylog.subway.Utils.StationConstant.*;
