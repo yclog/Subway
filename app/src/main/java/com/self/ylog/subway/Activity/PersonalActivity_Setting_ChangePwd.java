@@ -4,11 +4,13 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.self.ylog.subway.R;
 
@@ -30,6 +32,11 @@ public class PersonalActivity_Setting_ChangePwd extends AppCompatActivity{
     private EditText mEditText_Setting_ChangePwd_Newpwd;
     private EditText mEditText_Setting_ChangePwd_Verifypwd;
     private Button mButton_Setting_Changepwd;
+
+    //填入密码信息为空
+    private static String EMPTY_MESSAGE="密码不可为空";
+    //网络连接失败
+    private static String NO_NETWORK="网络连接失败";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -92,6 +99,10 @@ public class PersonalActivity_Setting_ChangePwd extends AppCompatActivity{
         oldpasswd=mEditText_Setting_ChangePwd_Oldpwd.getText().toString();
         newpasswd=mEditText_Setting_ChangePwd_Newpwd.getText().toString();
         verifypasswd=mEditText_Setting_ChangePwd_Verifypwd.getText().toString();
+        //判空
+        if (TextUtils.isEmpty(oldpasswd)||TextUtils.isEmpty(newpasswd)||TextUtils.isEmpty(verifypasswd)){
+            Toast.makeText(getContext(),EMPTY_MESSAGE,Toast.LENGTH_SHORT).show();
+        }
         //提交修改密码请求
     }
 }

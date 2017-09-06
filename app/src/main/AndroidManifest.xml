@@ -2,9 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.self.ylog.subway">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,14 +16,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.self.ylog.subway.Activity.MainActivity_Home">
+        <activity android:name="com.self.ylog.subway.Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.MainActivity_Login"></activity>
-        <activity android:name=".Activity.MainActivity_Register"></activity>
+        <activity android:name=".Activity.LoginActivity"></activity>
+        <activity android:name=".Activity.RegisterActivity"></activity>
         <activity android:name=".Activity.HomeActivity_Scan"></activity>
         <activity android:name=".Activity.HomeActivity_Ticket"></activity>
         <activity android:name=".Activity.HomeActivity_Ticket_PickStart"></activity>
@@ -52,12 +56,13 @@
         <activity android:name=".Activity.PersonalActivity_Wallet_Payment"></activity>
         <activity android:name=".Activity.PersonalActivity_Wallet_Balance"></activity>
         <activity android:name=".Activity.PersonalActivity_Wallet_Coupon"></activity>
-        <activity android:name=".Activity.PersonalActivity_Order"></activity>
+        <activity android:name=".Activity.PersonalActivity_Route"></activity>
         <activity android:name=".Activity.PersonalActivity_Coupon"></activity>
         <activity android:name=".Activity.PersonalActivity_Pointsmall"></activity>
         <activity android:name=".Activity.PersonalActivity_Notification"></activity>
         <activity android:name=".Activity.PersonalActivity_Feedback"></activity>
         <activity android:name=".Activity.PersonalActivity_AboutUs"></activity>
+
     </application>
 
 </manifest>

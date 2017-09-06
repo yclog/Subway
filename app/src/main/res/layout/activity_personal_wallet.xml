@@ -19,7 +19,7 @@
         android:layout_height="15dp"></View>
 
     <include
-        android:id="@+id/personal_wallet_balance"
+        android:id="@+id/textview_personal_wallet_balance"
         layout="@layout/personal_wallet_item_balance"></include>
 
     <include

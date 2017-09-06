@@ -16,28 +16,49 @@ import com.self.ylog.subway.Fragment.LifeFragment;
 import com.self.ylog.subway.Fragment.PersonalFragment;
 import com.self.ylog.subway.Fragment.SubwayFragment;
 import com.self.ylog.subway.R;
+import com.self.ylog.subway.Utils.LoginState;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity_Home extends AppCompatActivity implements View.OnClickListener{
+/**
+ * Created by cylog on 2017/4/27.
+ * MainFunction:Complete the App main Viewpager Layout sliding logic ,and add ClickLisenter method to
+ *          control Navigation bottom button.
+ */
 
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+    /**
+     * Naviagtion Button icon
+     * */
     private ImageView bottom_one;
     private ImageView bottom_two;
     private ImageView bottom_three;
     private ImageView bottom_four;
-
+    /**
+     * Navation Button text
+     * */
     private TextView menu_txt_one;
     private TextView menu_txt_two;
     private TextView menu_txt_three;
     private TextView menu_txt_four;
 
+    /**
+     * Use Layout to replace Button make it more flexible
+     * bottom_menu_one_Layout:HomeFragment Navigation Buttom
+     * bottom_menu_two_Layout:SubwayFragment Navigation Button
+     * bottom_menu_three_Layout:LifeFragment Navigation Button
+     * bottom_menu_four_Layout:PersonalFragment Navigation Button
+     * */
     private RelativeLayout bottom_menu_one_Layout,bottom_menu_two_Layout,bottom_menu_three_Layout,bottom_menu_four_Layout;
 
+    /**
+     * fraglist:Save all Fragment obeject
+     * Navigation_ViewPager:Handle the Main Navigation View
+     * */
     private List<Fragment> fragList;
-    private ViewPager Bottom_Navigation_Pager;
-    private BottonMenuFragment BottomNavigationFragment;
-
+    private ViewPager Navigation_ViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,22 +73,22 @@ public class MainActivity_Home extends AppCompatActivity implements View.OnClick
         init_BottomNavigation_IconTextView();
         //初始化底部导航按钮layout
         init_BottomNavigation_Layout();
-        /*
-        * 初始化viewpager控件
-        * */
-        Bottom_Navigation_Pager =(ViewPager) findViewById(R.id.main_viewpager);
+        /**
+         * 初始化viewpager控件
+         * */
+        Navigation_ViewPager =(ViewPager) findViewById(R.id.main_viewpager);
         fragList=new ArrayList<Fragment>();
-        /*
+        /**
         * 为fragmentViewpagerList添加fragment
         * */
         fragList.add(new HomeFragment());
         fragList.add(new SubwayFragment());
         fragList.add(new LifeFragment());
         fragList.add(new PersonalFragment());
-        /*
+        /**
         * 添加Viewpager滑动监听事件
         * */
-        Bottom_Navigation_Pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        Navigation_ViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             //Viewpager重写方法
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -83,11 +104,11 @@ public class MainActivity_Home extends AppCompatActivity implements View.OnClick
                 //该方法为翻页状态变化事件
             }
         });
-        /*
+        /**
         * viewapager设置adapter
         * */
         FragmentPagerAdapter adapter=new FragmentPagerAdapter(getSupportFragmentManager(),fragList);
-        Bottom_Navigation_Pager.setAdapter(adapter);
+        Navigation_ViewPager.setAdapter(adapter);
     }
 
     //初始化底部按钮ImageView
@@ -139,20 +160,20 @@ public class MainActivity_Home extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bottom_menu_one_Layout:
-                Bottom_Navigation_Pager.setCurrentItem(0);
+                Navigation_ViewPager.setCurrentItem(0);
                 break;
             case R.id.bottom_menu_two_Layout:
-                Bottom_Navigation_Pager.setCurrentItem(1);
+                Navigation_ViewPager.setCurrentItem(1);
                 break;
             case R.id.bottom_menu_three_Layout:
-                Bottom_Navigation_Pager.setCurrentItem(2);
+                Navigation_ViewPager.setCurrentItem(2);
                 break;
             case R.id.bottom_menu_four_Layout:
-                Bottom_Navigation_Pager.setCurrentItem(3);
+                Navigation_ViewPager.setCurrentItem(3);
         }
     }
 
-    //点击底部menu icon图片和字体颜色
+    //点击底部Navigation Button的同时改变menu icon图片和字体颜色
     public void change_menu_state(int position) {
         switch (position + 1) {
             case 1: {

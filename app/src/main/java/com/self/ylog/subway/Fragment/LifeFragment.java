@@ -15,10 +15,8 @@ import com.self.ylog.subway.Activity.LifeActivity_Favour;
 import com.self.ylog.subway.Activity.LifeActivity_Gourmet;
 import com.self.ylog.subway.Activity.LifeActivity_Literature;
 import com.self.ylog.subway.Activity.LifeActivity_Travel;
-import com.self.ylog.subway.Adapter.RecyclerViewCardViewAdapter;
-import com.self.ylog.subway.Adapter.RecyclerViewHomeAdapter;
+import com.self.ylog.subway.Adapter.RecyclerViewLifeAndSubwayAdapter;
 import com.self.ylog.subway.R;
-import com.self.ylog.subway.Utils.ItemHomeData;
 import com.self.ylog.subway.Utils.ItemNewsData;
 
 import java.util.ArrayList;
@@ -40,14 +38,13 @@ public class LifeFragment extends android.support.v4.app.Fragment implements Vie
     private RelativeLayout mLife_City;
     //recyclerview
     private RecyclerView mLifeRecyclerView;
-    private RecyclerViewCardViewAdapter mLifeRecyclerViewAdapter;
+    private RecyclerViewLifeAndSubwayAdapter mLifeRecyclerViewAdapter;
     private List<ItemNewsData> mDataList;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_life,container,false);
-        initView(view);
         init_RecyclerView(view);
         return view;
     }
@@ -55,9 +52,16 @@ public class LifeFragment extends android.support.v4.app.Fragment implements Vie
     public void init_RecyclerView(View view){
         initDataList();
         mLifeRecyclerView=(RecyclerView) view.findViewById(R.id.Life_RecyclerView);
-        mLifeRecyclerViewAdapter =new RecyclerViewCardViewAdapter(getContext(),mDataList);
+        mLifeRecyclerViewAdapter =new RecyclerViewLifeAndSubwayAdapter(getContext(),mDataList);
         mLifeRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mLifeRecyclerView.setAdapter(mLifeRecyclerViewAdapter);
+        setHeader(mLifeRecyclerView);
+    }
+
+    private void setHeader(RecyclerView view) {
+        View header = LayoutInflater.from(getContext()).inflate(R.layout.subheader_life, view, false);
+        mLifeRecyclerViewAdapter.setHeaderView(header);
+        initView(header);
     }
 
     public void initDataList(){

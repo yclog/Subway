@@ -16,7 +16,7 @@ import com.self.ylog.subway.Activity.SubwayActivity_Law;
 import com.self.ylog.subway.Activity.SubwayActivity_News;
 import com.self.ylog.subway.Activity.SubwayActivity_Price;
 import com.self.ylog.subway.Activity.SubwayActivity_Secure;
-import com.self.ylog.subway.Adapter.RecyclerViewCardViewAdapter;
+import com.self.ylog.subway.Adapter.RecyclerViewLifeAndSubwayAdapter;
 import com.self.ylog.subway.R;
 import com.self.ylog.subway.Utils.ItemNewsData;
 
@@ -40,14 +40,13 @@ public class SubwayFragment extends android.support.v4.app.Fragment implements V
     private RelativeLayout mSubway_Bytrain;
     //Recyclerview定义
     private RecyclerView mSubwayRecyclerView;
-    private RecyclerViewCardViewAdapter mSubwayRecyclerViewAdaper;
+    private RecyclerViewLifeAndSubwayAdapter mSubwayRecyclerViewAdaper;
     private List<ItemNewsData> mDataList;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_subway,container,false);
-        initView(view);
         init_RecyclerView(view);
         return view;
     }
@@ -70,9 +69,16 @@ public class SubwayFragment extends android.support.v4.app.Fragment implements V
     public void init_RecyclerView(View view){
         initDataList();
         mSubwayRecyclerView=(RecyclerView) view.findViewById(R.id.Subway_RecyclerView);
-        mSubwayRecyclerViewAdaper=new RecyclerViewCardViewAdapter(getContext(),mDataList);
+        mSubwayRecyclerViewAdaper=new RecyclerViewLifeAndSubwayAdapter(getContext(),mDataList);
         mSubwayRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mSubwayRecyclerView.setAdapter(mSubwayRecyclerViewAdaper);
+        setHeader(mSubwayRecyclerView);
+    }
+
+    private void setHeader(RecyclerView view) {
+        View header = LayoutInflater.from(getContext()).inflate(R.layout.subheader_subway, view, false);
+        mSubwayRecyclerViewAdaper.setHeaderView(header);
+        initView(header);
     }
 
     public void initDataList(){

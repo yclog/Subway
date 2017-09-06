@@ -12,7 +12,7 @@
         android:layout_height="5dp"></View>
 
     <EditText
-        android:id="@+id/Edit_suggestion"
+        android:id="@+id/edittext_feedback_content"
         android:textColor="@color/primary_text"
         android:hint="我们的每一个进步都来源于您的意见与反馈"
         android:textColorHint="@color/hint_text"
@@ -24,6 +24,8 @@
         android:lines="8"
         android:background="@color/Whitecolorbackground"
         android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
         android:layout_width="match_parent"
         android:layout_height="160dp" />
 
@@ -33,10 +35,12 @@
         android:layout_height="10dp"></View>
 
     <EditText
-        android:id="@+id/Edit_suggestion_contact"
+        android:id="@+id/edittext_feedback_contact"
         android:textColor="@color/primary_text"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
         android:background="#ffffff"
         android:hint="手机/QQ/邮箱"
         android:paddingLeft="5dp"
@@ -49,14 +53,14 @@
         android:layout_height="10dp"></View>
 
     <Button
-        android:id="@+id/Btn_push_suggestion"
-        android:background="@drawable/primary_btn"
+        android:id="@+id/button_feedback_submit"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
+        android:background="@drawable/primary_btn"
         android:text="提交"
-        android:textColor="@color/primary_white_text"/>
+        android:textColor="@color/primary_white_text" />
 
 </LinearLayout>

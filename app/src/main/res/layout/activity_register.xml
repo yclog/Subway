@@ -20,7 +20,7 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_height="wrap_content" />
 
         <ImageView
             android:src="@mipmap/register_icon_tele"
@@ -35,45 +35,47 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"></View>
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <EditText
             android:id="@+id/register_code"
-            android:textColor="@color/primary_text"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:hint="请输入手机验证码"
-            android:textColorHint="@color/hint_text"
+            android:paddingBottom="10dp"
             android:paddingLeft="50dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:textColor="@color/primary_text"
+            android:textColorHint="@color/hint_text" />
 
         <ImageView
-            android:src="@mipmap/register_icon_code"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
-            android:layout_width="24dp"
-            android:layout_height="24dp" />
+            android:src="@mipmap/register_icon_code" />
 
         <Button
-            android:text="获取验证码"
-            android:textSize="12sp"
-            android:textColor="@color/primary_white_text"
-            android:background="@drawable/register_btn"
-            android:layout_centerVertical="true"
+            android:id="@+id/getVerifyCode_btn"
+            android:layout_width="120dp"
+            android:layout_height="42dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="8dp"
-            android:layout_width="120dp"
-            android:layout_height="42dp" />
+            android:background="@drawable/register_btn"
+            android:text="获取验证码"
+            android:textColor="@color/primary_white_text"
+            android:textSize="12sp" />
 
         <View
-            android:background="@color/divider"
-            android:layout_below="@+id/register_code"
             android:layout_width="match_parent"
-            android:layout_height="1dp"></View>
+            android:layout_height="1dp"
+            android:layout_below="@+id/register_code"
+            android:background="@color/divider"></View>
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -105,6 +107,7 @@
     </RelativeLayout>
 
     <Button
+        android:id="@+id/register_btn"
         android:text="注册"
         android:textColor="@color/primary_white_text"
         android:textSize="18sp"

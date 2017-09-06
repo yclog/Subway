@@ -90,4 +90,11 @@ public class PersonalActivity_Info extends AppCompatActivity implements View.OnC
         mContext=this;
         return mContext;
     }
+
+    /**
+     * 获取头像和昵称
+     * */
+    private void getUserInfo(){
+
+    }
 }

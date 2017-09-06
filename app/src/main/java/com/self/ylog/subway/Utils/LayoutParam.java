@@ -10,6 +10,23 @@ public class LayoutParam {
     private static LayoutParam mLayoutParam;
     private int HomeHeaderHeight;
     private int HomeHeaderBottom;
+    private int HomeHeaderTop;
+
+    public static LayoutParam getmLayoutParam() {
+        return mLayoutParam;
+    }
+
+    public static void setmLayoutParam(LayoutParam mLayoutParam) {
+        LayoutParam.mLayoutParam = mLayoutParam;
+    }
+
+    public int getHomeHeaderTop() {
+        return HomeHeaderTop;
+    }
+
+    public void setHomeHeaderTop(int homeHeaderTop) {
+        HomeHeaderTop = homeHeaderTop;
+    }
 
     private LayoutParam(){}
 

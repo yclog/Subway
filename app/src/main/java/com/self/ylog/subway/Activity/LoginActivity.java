@@ -4,33 +4,44 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.self.ylog.subway.R;
-import com.self.ylog.subway.Utils.LoginState;
 
 /**
  * Created by cylog on 2017/4/27.
- * Function:
+ * Function:用户登陆界面
  */
 
-public class MainActivity_Login extends AppCompatActivity implements View.OnClickListener{
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+    //界面控件
     private TextView mTele;
     private TextView mPasswd;
     private TextView mForgetPwd;
     private Button Login_btn;
     private Button Register_btn;
+    //登陆失败
+    private static int LOGIN_FAILED=0;
+    //登陆成功
+    private static int LOGIN_SUCCESS=1;
+    //登陆账号无效
+    private static String LOGIN_INVAILD_ACCOUNT="账号不存在";
+    //登陆密码无效
+    private static String LOGIN_INVAILD_PASSWORD="密码错误，请再次输入";
+    //登陆账号密码为空
+    private static String LOGIN_EMPTY_MESSAGE="账号密码不可为空";
+    //网络连接失败
+    private static String NO_NETWORK="网络连接失败";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         init_View();
-
     }
 
     //初始化控件
@@ -52,10 +63,11 @@ public class MainActivity_Login extends AppCompatActivity implements View.OnClic
                 break;
             }
             case R.id.login_btn:{
+                Login();
                 break;
             }
             case R.id.login_register:{
-                Intent intent=new Intent(this,MainActivity_Register.class);
+                Intent intent=new Intent(this,RegisterActivity.class);
                 startActivity(intent);
                 break;
             }
@@ -63,19 +75,27 @@ public class MainActivity_Login extends AppCompatActivity implements View.OnClic
     }
 
     /**
-     * 重写返回键
-     */
-//    @Override
-//    public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        if (keyCode == KeyEvent.KEYCODE_BACK) {
-//            if (LoginState.getInstance().getLoginState()){
-//                finish();
-//            } else {
-//                finish();
-//            }
-//            return true;
-//        }
-//        return super.onKeyDown(keyCode, event);
-//    }
+     * 登陆
+     * */
+    private void Login(){
+        //用户账号密码
+        String tele=mTele.getText().toString();
+        String passwd=mPasswd.getText().toString();
+        //判断输入为空
+        if (TextUtils.isEmpty(tele)||TextUtils.isEmpty(passwd)){
+            Toast.makeText(getApplicationContext(),LOGIN_EMPTY_MESSAGE,Toast.LENGTH_SHORT).show();
+        }
+        //尝试登陆
+        tryLogin(tele,passwd);
+    }
+
+    /**
+     * 尝试登陆
+     * */
+    private void tryLogin(String tele,String passwd){
+        //检查网络连接
+
+        //加密发送登陆请求
+    }
 
 }

@@ -29,8 +29,8 @@ public class PersonalActivity_Info_Birth extends AppCompatActivity implements Vi
      * */
     private ImageView mIcon_Back;
 
-    private Button personal_info_birth_btn;
-    private TimePickerView pvTime;
+    private Button mPersonal_Info_Birth_btn;
+    private TimePickerView mTimePickerView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,11 +41,11 @@ public class PersonalActivity_Info_Birth extends AppCompatActivity implements Vi
     }
 
     public void init_view(){
-        personal_info_birth_btn=(Button) findViewById(R.id.personal_info_birth_btn);
-        personal_info_birth_btn.setOnClickListener(new View.OnClickListener() {
+        mPersonal_Info_Birth_btn =(Button) findViewById(R.id.personal_info_birth_btn);
+        mPersonal_Info_Birth_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pvTime.show(v);
+                mTimePickerView.show(v);
             }
         });
         mIcon_Back=(ImageView) findViewById(R.id.icon_back);
@@ -90,14 +90,12 @@ public class PersonalActivity_Info_Birth extends AppCompatActivity implements Vi
         Calendar endDate = Calendar.getInstance();
         endDate.set(currentDate.get(Calendar.YEAR),currentDate.get(Calendar.MONTH),currentDate.get(Calendar.DAY_OF_MONTH));
         //时间选择器
-        pvTime = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
+        mTimePickerView = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
             @Override
             public void onTimeSelect(Date date, View v) {//选中事件回调
                 // 这里回调过来的v,就是show()方法里面所添加的 View 参数，如果show的时候没有添加参数，v则为null
-
-                /*btn_Time.setText(getTime(date));*/
-                Button btn = (Button) v;
-                btn.setText(getTime(date));
+                Button button = (Button) v;
+                button.setText(getTime(date));
             }
         })
                 .setType(TimePickerView.Type.YEAR_MONTH_DAY)

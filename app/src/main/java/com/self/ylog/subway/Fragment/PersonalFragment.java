@@ -3,7 +3,6 @@ package com.self.ylog.subway.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +16,12 @@ import com.self.ylog.subway.Activity.PersonalActivity_Coupon;
 import com.self.ylog.subway.Activity.PersonalActivity_Feedback;
 import com.self.ylog.subway.Activity.PersonalActivity_Info;
 import com.self.ylog.subway.Activity.PersonalActivity_Notification;
-import com.self.ylog.subway.Activity.PersonalActivity_Order;
+import com.self.ylog.subway.Activity.PersonalActivity_Route;
 import com.self.ylog.subway.Activity.PersonalActivity_Pointsmall;
 import com.self.ylog.subway.Activity.PersonalActivity_Setting;
 import com.self.ylog.subway.Activity.PersonalActivity_Wallet;
 import com.self.ylog.subway.R;
+import com.self.ylog.subway.Utils.LoginState;
 import com.self.ylog.subway.View.CircleImageView;
 
 /**
@@ -55,6 +55,7 @@ public class PersonalFragment extends android.support.v4.app.Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_personal,container,false);
         initView(view);
+        ComfirmLoginState();
         return view;
     }
 
@@ -72,7 +73,9 @@ public class PersonalFragment extends android.support.v4.app.Fragment implements
         initMenuView(view);
     }
 
-    //Titlebar控件
+    /**
+     * Titlebar控件
+     * */
     public void initTitlebarView(View view){
         mTitlebar_Personal_Notification=(ImageView) view.findViewById(R.id.titlebar_personal_notification);
         mTitlebar_Personal_Notification.setOnClickListener(this);
@@ -80,7 +83,9 @@ public class PersonalFragment extends android.support.v4.app.Fragment implements
         mTitlebar_Personal_Setting.setOnClickListener(this);
     }
 
-    //Subheader控件
+    /**
+     * Subheader控件
+     * */
     public void initSubHeaderView(View view){
         mSubhead_Personal_Avatar=(CircleImageView) view.findViewById(R.id.subhead_personal_avatar);
         mSubhead_Personal_NickName=(TextView) view.findViewById(R.id.subhead_personal_nickname);
@@ -88,7 +93,9 @@ public class PersonalFragment extends android.support.v4.app.Fragment implements
         mSubhead_Personal_Info.setOnClickListener(this);
     }
 
-    //Menu控件
+    /**
+     * Menu控件
+     * */
     public void initMenuView(View view){
         mPersonal_Menu_Wallet=(RelativeLayout) view.findViewById(R.id.personal_menu_wallet);
         mPersonal_Menu_Wallet.setOnClickListener(this);
@@ -108,6 +115,42 @@ public class PersonalFragment extends android.support.v4.app.Fragment implements
         mPersonal_Menu_Feedback.setOnClickListener(this);
         mPersonal_Menu_AboutUs=(RelativeLayout) view.findViewById(R.id.personal_menu_aboutus);
         mPersonal_Menu_AboutUs.setOnClickListener(this);
+    }
+
+    /**
+     * 验证登陆状态
+     * */
+    private void ComfirmLoginState(){
+        //获取登录状态并进行判断
+        if (LoginState.getInstance().isLogin()) {
+            //在跳转至个人界面时，判断是否已经导入个人设置
+            if(isLoadUserData()){
+                LoadUserData();
+            }
+        } else {
+            //当前状态为未登录，此时跳转进入登陆界面进行登陆
+
+        }
+    }
+
+    /**
+     * 在跳转至个人界面时，判断是否已经导入个人设置
+     * */
+    private boolean isLoadUserData(){
+        return true;
+    }
+
+    /**
+     * 首次登陆后进入当前界面使用在线导入个人信息,同时保存至本地
+     * 之后使用本地加载
+     * */
+    private void LoadUserData(){
+        //判断是否第一次登陆后进入个人界面
+        if (LoginState.getInstance().isFirstLogin()){
+            //此处联网导入个人信息且保存至本地中
+        } else {
+            //此处读取本地信息
+        }
     }
 
     @Override
@@ -131,7 +174,7 @@ public class PersonalFragment extends android.support.v4.app.Fragment implements
                 startActivity(mIntent);
                 break;
             case R.id.personal_menu_order:
-                mIntent=new Intent(getContext(), PersonalActivity_Order.class);
+                mIntent=new Intent(getContext(), PersonalActivity_Route.class);
                 startActivity(mIntent);
                 break;
             case R.id.personal_menu_vip:

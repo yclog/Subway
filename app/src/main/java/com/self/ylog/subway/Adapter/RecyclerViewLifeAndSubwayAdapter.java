@@ -16,31 +16,58 @@ import java.util.List;
  * Created by cylog on 2017/5/7.
  */
 
-public class RecyclerViewCardViewAdapter extends RecyclerView.Adapter<RecyclerViewCardViewAdapter.RecyclerViewHolder> {
+public class RecyclerViewLifeAndSubwayAdapter extends RecyclerView.Adapter<RecyclerViewLifeAndSubwayAdapter.RecyclerViewHolder> {
 
     private List<ItemNewsData> mDataList;
     private LayoutInflater mInflater;
 
-    public RecyclerViewCardViewAdapter(Context context, List<ItemNewsData> mDataList){
+    //设置header
+    public static final int TYPE_HEADER = 0;
+    public static final int TYPE_NORMAL = 1;
+
+    private View mHeaderView;
+
+    public void setHeaderView(View headerView) {
+        mHeaderView = headerView;
+        notifyItemInserted(0);
+    }
+
+    public View getHeaderView() {
+        return mHeaderView;
+    }
+
+    public RecyclerViewLifeAndSubwayAdapter(Context context, List<ItemNewsData> mDataList){
         mInflater = LayoutInflater.from(context);
         this.mDataList = mDataList;
     }
 
     @Override
-    public RecyclerViewCardViewAdapter.RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public int getItemViewType(int position) {
+        if(mHeaderView == null) return TYPE_NORMAL;
+        if(position == 0) return TYPE_HEADER;
+        return TYPE_NORMAL;
+    }
+
+    @Override
+    public RecyclerViewLifeAndSubwayAdapter.RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if(mHeaderView != null && viewType == TYPE_HEADER) return new RecyclerViewHolder(mHeaderView);
         RecyclerViewHolder holder=new RecyclerViewHolder(mInflater.inflate(R.layout.recyclerview_news_style,parent,false));
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(final RecyclerViewCardViewAdapter.RecyclerViewHolder holder, int position) {
-        holder.mNews_Src.setImageResource(mDataList.get(position).news_src);
-        holder.mNews_Title.setText(mDataList.get(position).news_title);
-        holder.mNews_Thumb_Num.setText(mDataList.get(position).news_thumb_num);
-        holder.mNews_Comment_Num.setText(mDataList.get(position).news_comment_num);
-        holder.mNews_Date.setText(mDataList.get(position).news_date);
-        holder.mNews_Time.setText(mDataList.get(position).news_time);
-        holder.isStared=mDataList.get(position).isStared;
+    public void onBindViewHolder(final RecyclerViewLifeAndSubwayAdapter.RecyclerViewHolder holder, int position) {
+        //判断为首部
+        if(getItemViewType(position) == TYPE_HEADER) return;
+        final int realposition = getRealPosition(holder);
+        //判断为RecyclerView
+        holder.mNews_Src.setImageResource(mDataList.get(realposition).news_src);
+        holder.mNews_Title.setText(mDataList.get(realposition).news_title);
+        holder.mNews_Thumb_Num.setText(mDataList.get(realposition).news_thumb_num);
+        holder.mNews_Comment_Num.setText(mDataList.get(realposition).news_comment_num);
+        holder.mNews_Date.setText(mDataList.get(realposition).news_date);
+        holder.mNews_Time.setText(mDataList.get(realposition).news_time);
+        holder.isStared=mDataList.get(realposition).isStared;
         if(holder.isStared){
             //已经点赞过，点赞按钮设置为已经点击格式
         }
@@ -66,9 +93,14 @@ public class RecyclerViewCardViewAdapter extends RecyclerView.Adapter<RecyclerVi
         });
     }
 
+    public int getRealPosition(RecyclerViewHolder holder) {
+        int position = holder.getLayoutPosition();
+        return mHeaderView == null ? position : position - 1;
+    }
+
     @Override
     public int getItemCount() {
-        return mDataList.size();
+        return mHeaderView == null ? mDataList.size() : mDataList.size() + 1;
     }
 
     @Override

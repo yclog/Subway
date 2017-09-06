@@ -10,11 +10,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.self.ylog.subway.Adapter.RecyclerViewHomeAdapter;
 import com.self.ylog.subway.Adapter.RecyclerViewOrderAdapter;
 import com.self.ylog.subway.R;
-import com.self.ylog.subway.Utils.ItemHomeData;
-import com.self.ylog.subway.Utils.ItemNewsData;
 import com.self.ylog.subway.Utils.ItemOrderData;
 
 import java.util.ArrayList;
@@ -24,16 +21,19 @@ import java.util.List;
  * Created by cylog on 2017/4/27.
  */
 
-public class PersonalActivity_Order extends AppCompatActivity{
+public class PersonalActivity_Route extends AppCompatActivity{
     private Context mContext=this;
     /**
      * 定义控件item
      * @control titlebar内控件
      * */
     private ImageView mIcon_Back;
-    //recyclerview
+    /**
+     * 行程订单（RecyclerView）
+     * */
     private RecyclerView mOrderRecyclerView;
     private RecyclerViewOrderAdapter mOrderRecyclerViewAdapter;
+    //数据保存表
     private List<ItemOrderData> mDataList;
 
     @Override
@@ -52,11 +52,16 @@ public class PersonalActivity_Order extends AppCompatActivity{
         mOrderRecyclerView.setAdapter(mOrderRecyclerViewAdapter);
     }
 
+    /**
+     * 初始化行程数据表
+     * */
     public void initDataList(){
+        //设置测试数据
         mDataList=new ArrayList<ItemOrderData>();
         for (int i = 0; i <5 ; i++) {
             mDataList.add(new ItemOrderData("地铁","已完成","05-08","20:47","西安市.五路口-地铁站","西安市.西安北站-地铁站"));
         }
+        //导入在线数据
     }
 
     /**
@@ -68,7 +73,7 @@ public class PersonalActivity_Order extends AppCompatActivity{
         mIcon_Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PersonalActivity_Order.this.finish();
+                PersonalActivity_Route.this.finish();
             }
         });
     }
@@ -78,7 +83,7 @@ public class PersonalActivity_Order extends AppCompatActivity{
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            PersonalActivity_Order.this.finish();
+            PersonalActivity_Route.this.finish();
             return true;
         }
         return super.onKeyDown(keyCode, event);

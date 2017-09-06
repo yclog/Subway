@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.self.ylog.subway.R;
@@ -21,6 +23,12 @@ public class PersonalActivity_Feedback extends AppCompatActivity{
      * @control titlebar内控件
      * */
     private ImageView mIcon_Cancel;
+    /**
+     * @control 主界面控件
+     * */
+    private EditText mEditText_Feedback_Content;
+    private EditText mEditText_Feedback_Contact;
+    private Button mButton_Feedback_Submit;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +47,15 @@ public class PersonalActivity_Feedback extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 PersonalActivity_Feedback.this.finish();
+            }
+        });
+        mEditText_Feedback_Content=(EditText) findViewById(R.id.edittext_feedback_content);
+        mEditText_Feedback_Contact=(EditText) findViewById(R.id.edittext_feedback_contact);
+        mButton_Feedback_Submit=(Button) findViewById(R.id.button_feedback_submit);
+        mButton_Feedback_Submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SubmitMessage();
             }
         });
     }
@@ -60,5 +77,17 @@ public class PersonalActivity_Feedback extends AppCompatActivity{
     public Context getContext(){
         mContext=this;
         return mContext;
+    }
+
+    /**
+     * 提交反馈信息
+     * */
+    private void SubmitMessage(){
+        //反馈信息和联系方式
+        String feedback_content;
+        String feedback_contact;
+        feedback_content=mEditText_Feedback_Content.getText().toString();
+        feedback_contact=mEditText_Feedback_Contact.getText().toString();
+        //联网提交反馈信息
     }
 }

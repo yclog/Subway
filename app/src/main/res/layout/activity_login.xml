@@ -80,8 +80,8 @@
         android:layout_below="@+id/login_forget"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
-        android:layout_width="280dp"
-        android:layout_height="48dp" />
+        android:layout_width="220dp"
+        android:layout_height="42dp"/>
 
     <Button
         android:id="@+id/login_register"
@@ -92,8 +92,8 @@
         android:layout_below="@+id/login_btn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:layout_width="280dp"
-        android:layout_height="48dp" />
+        android:layout_width="220dp"
+        android:layout_height="42dp" />
 
     <ImageView
         android:src="@drawable/login_background"

@@ -175,4 +175,12 @@
         </RelativeLayout>
     </LinearLayout>
 
+    <View
+        android:id="@+id/divider_view"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:background="@color/subhead_divider"
+        ></View>
+
+
 </LinearLayout>

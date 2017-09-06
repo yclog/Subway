@@ -44,6 +44,7 @@
             android:layout_height="20dp" />
 
         <TextView
+            android:id="@+id/textview_personal_wallet_balance"
             android:text="0.00"
             android:textColor="@color/primary_yellow"
             android:textSize="48sp"

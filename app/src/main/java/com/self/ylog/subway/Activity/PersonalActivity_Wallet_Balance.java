@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.self.ylog.subway.R;
 
@@ -21,6 +22,7 @@ public class PersonalActivity_Wallet_Balance extends AppCompatActivity{
      * @control titlebar内控件
      * */
     private ImageView mIcon_Back;
+    private TextView mPersonal_Wallet_Balance_Textview;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class PersonalActivity_Wallet_Balance extends AppCompatActivity{
                 PersonalActivity_Wallet_Balance.this.finish();
             }
         });
+        mPersonal_Wallet_Balance_Textview=(TextView) findViewById(R.id.textview_personal_wallet_balance);
     }
     /**
      * 重写返回键
@@ -60,5 +63,12 @@ public class PersonalActivity_Wallet_Balance extends AppCompatActivity{
     public Context getContext(){
         mContext=this;
         return mContext;
+    }
+
+    /**
+     * 获取余额
+     * */
+    private void getBalance(){
+        //实时获取账户余额
     }
 }

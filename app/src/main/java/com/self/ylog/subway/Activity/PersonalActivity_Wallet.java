@@ -41,7 +41,7 @@ public class PersonalActivity_Wallet extends AppCompatActivity implements View.O
     public void initView(){
         mPersonal_Wallet_Payment=(RelativeLayout) findViewById(R.id.personal_wallet_payment);
         mPersonal_Wallet_Payment.setOnClickListener(this);
-        mPersonal_Wallet_Balance=(RelativeLayout) findViewById(R.id.personal_wallet_balance);
+        mPersonal_Wallet_Balance=(RelativeLayout) findViewById(R.id.textview_personal_wallet_balance);
         mPersonal_Wallet_Balance.setOnClickListener(this);
         mPersonal_Wallet_Coupon=(RelativeLayout) findViewById(R.id.personal_wallet_coupon);
         mPersonal_Wallet_Coupon.setOnClickListener(this);
@@ -62,7 +62,7 @@ public class PersonalActivity_Wallet extends AppCompatActivity implements View.O
                 mIntent=new Intent(getContext(),PersonalActivity_Wallet_Payment.class);
                 startActivity(mIntent);
                 break;
-            case R.id.personal_wallet_balance:
+            case R.id.textview_personal_wallet_balance:
                 mIntent=new Intent(getContext(),PersonalActivity_Wallet_Balance.class);
                 startActivity(mIntent);
                 break;

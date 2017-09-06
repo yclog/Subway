@@ -28,7 +28,6 @@ import com.self.ylog.subway.Adapter.RecyclerViewHomeAdapter;
 import com.self.ylog.subway.R;
 import com.self.ylog.subway.Utils.ItemHomeData;
 import com.self.ylog.subway.Utils.LayoutParam;
-import com.self.ylog.subway.View.TestRecylerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +46,7 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
     private ViewPager mHomeAdViewPager;
     private ArrayList<ImageView> ImageList;
     //RecyclerView
-    private TestRecylerView mHomeRecyclerView;
+    private RecyclerView mHomeRecyclerView;
     private RecyclerViewHomeAdapter mHomeRecyclerViewAdapter;
     private List<ItemHomeData> mDataList;
     //viewpager设置定时转换
@@ -70,13 +69,18 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_home,container,false);
-        initView(view);
+        init_TitleBarView(view);
+        //实例化主界面Home_RecyclerView
+        init_RecyclerView(view);
         return view;
     }
 
-    public void initView(View view){
-        //实例化主界面Home_RecyclerView
-        init_RecyclerView(view);
+    public void init_TitleBarView(View view){
+        mTitlebar_Scan=(ImageView) view.findViewById(R.id.titlebar_scan);
+        mTitlebar_Scan.setOnClickListener(this);
+    }
+
+    public void init_HeaderView(View view){
         //实例化主界面宣传栏Home_Ad_ViewPager
         init_HomeViewPagerAd(view);
         //实例化子界面内控件
@@ -84,8 +88,6 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
     }
 
     public void init_subheaderview(View view){
-        mTitlebar_Scan=(ImageView) view.findViewById(R.id.titlebar_scan);
-        mTitlebar_Scan.setOnClickListener(this);
         /**
          * subheader内控件实例化
          * 为每个subheader itemview设置点击事件
@@ -107,10 +109,10 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
         mHomeLivestream.setOnClickListener(this);
     }
 
+    /**
+     * 主页滚动viewpager广告栏实例化
+     * */
     public void init_HomeViewPagerAd(View view){
-        /**
-         * 主页滚动viewpager广告栏实例化
-         * */
         CurrentItem=1;
         mHomeAdViewPager =(ViewPager) view.findViewById(R.id.Home_Ad_ViewPager);
         ImageList=new ArrayList<ImageView>();
@@ -174,16 +176,24 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
             }
         };
         mTimer = new Timer();
-        mTimer.schedule(mTimertask,0,10000);
+        mTimer.schedule(mTimertask,0,5000);
     }
 
     public void init_RecyclerView(View view){
         initDataList();
-        mHomeRecyclerView=(TestRecylerView) view.findViewById(R.id.Home_RecyclerView);
+        mHomeRecyclerView=(RecyclerView) view.findViewById(R.id.Home_RecyclerView);
         mHomeRecyclerViewAdapter =new RecyclerViewHomeAdapter(getContext(),mDataList);
         mHomeRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
         mHomeRecyclerView.setAdapter(mHomeRecyclerViewAdapter);
+        setHeader(mHomeRecyclerView);
         setHeaderHeight(mHomeRecyclerView);
+    }
+
+    private void setHeader(RecyclerView view) {
+        View header = LayoutInflater.from(getContext()).inflate(R.layout.subheader_home, view, false);
+        mHomeRecyclerViewAdapter.setFitstHeaderView(header);
+        init_HeaderView(header);
     }
 
     //设置当前HeaderBody底部位置进入LayoutParam类
@@ -195,12 +205,13 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
                 mHomeRecyclerView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                 LayoutParam.getInstance().setHomeHeaderHeight(mHomeRecyclerView.getHeight());
                 LayoutParam.getInstance().setHomeHeaderBottom(mHomeRecyclerView.getBottom());
-                Log.d("test", "HomeFragment: "+LayoutParam.getInstance().getHomeHeaderBottom());
-                Log.d("test", "HomeFragment: "+LayoutParam.getInstance());
+                Log.d("test", "RecyclerView Bottom: "+LayoutParam.getInstance().getHomeHeaderBottom());
+                Log.d("test", "ViewTreeObserver Instance: "+LayoutParam.getInstance());
             }
         });
     }
 
+    //初始化主界面新闻卡片数据
     public void initDataList(){
         mDataList=new ArrayList<ItemHomeData>();
         for (int i = 0; i <5 ; i++) {

@@ -15,10 +15,10 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/changephone_phonenum"
+            android:id="@+id/edittext_personal_changephone_tele"
             android:textColor="@color/primary_text"
             android:background="@drawable/edittext_shape"
-            android:hint="请输入手机号"
+            android:hint="请输入新手机号"
             android:textColorHint="@color/hint_text"
             android:paddingLeft="50dp"
             android:paddingTop="10dp"
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/changephone_code"
+            android:id="@+id/edittext_personal_changephone_verifycode"
             android:textColor="@color/primary_text"
             android:background="@drawable/edittext_shape"
             android:hint="请输入手机验证码"
@@ -63,7 +63,7 @@
             android:layout_height="20dp" />
 
         <Button
-            android:id="@+id/changephone_code_btn"
+            android:id="@+id/button_personal_changephone_get_verifycode"
             android:text="获取验证码"
             android:textSize="12sp"
             android:textColor="@color/primary_white_text"
@@ -82,6 +82,7 @@
     </RelativeLayout>
 
     <Button
+        android:id="@+id/button_personal_changephone"
         android:text="修改手机号码"
         android:textColor="@color/primary_white_text"
         android:textSize="18sp"

@@ -15,13 +15,14 @@
     <include layout="@layout/personal_aboutus_item_contact"></include>
 
     <ImageView
-        android:src="@drawable/subway_logo_version"
+        android:src="@drawable/subway_version_logo"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="340dp"
         android:layout_width="80dp"
         android:layout_height="80dp" />
 
     <TextView
+        android:id="@+id/textview_version_code"
         android:text="V1.3.14"
         android:textColor="@color/secondary_text"
         android:layout_gravity="center_horizontal"

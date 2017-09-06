@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.self.ylog.subway.R;
 
@@ -21,12 +22,17 @@ public class PersonalActivity_AboutUs extends AppCompatActivity{
      * @control titlebar内控件
      * */
     private ImageView mIcon_Back;
+    /**
+     * @control 主界面控件
+     * */
+    private TextView mTextview_version_code;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_aboutus);
         initView();
+        GetVersionCode();
     }
 
     /**
@@ -41,6 +47,7 @@ public class PersonalActivity_AboutUs extends AppCompatActivity{
                 PersonalActivity_AboutUs.this.finish();
             }
         });
+        mTextview_version_code=(TextView) findViewById(R.id.textview_version_code);
     }
     /**
      * 重写返回键
@@ -60,5 +67,12 @@ public class PersonalActivity_AboutUs extends AppCompatActivity{
     public Context getContext(){
         mContext=this;
         return mContext;
+    }
+
+    /**
+     * 获取当前APP版本号
+     * */
+    private void GetVersionCode(){
+
     }
 }

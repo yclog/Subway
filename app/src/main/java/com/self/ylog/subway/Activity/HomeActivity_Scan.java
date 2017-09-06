@@ -28,7 +28,6 @@ public class HomeActivity_Scan extends AppCompatActivity{
         setContentView(R.layout.activity_home_scan);
     }
 
-
     /**
      *  初始化控件，ID绑定
      *  findViewById
@@ -42,6 +41,7 @@ public class HomeActivity_Scan extends AppCompatActivity{
             }
         });
     }
+
     /**
      * 重写返回键
      */

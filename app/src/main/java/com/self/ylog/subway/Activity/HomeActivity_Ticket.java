@@ -154,6 +154,9 @@ public class HomeActivity_Ticket extends AppCompatActivity implements View.OnCli
         });
     }
 
+    /**
+     * 生成二维码
+     * */
     public void createQRImage(String url) {
         try {
             //判断URL合法性
@@ -188,6 +191,9 @@ public class HomeActivity_Ticket extends AppCompatActivity implements View.OnCli
         }
     }
 
+    /**
+     * 支付弹出对话框
+     * */
     public void payDialog(){
         LayoutInflater inflater = getLayoutInflater();
         View Dialog = inflater.inflate(R.layout.pay_dialog,(ViewGroup) findViewById(R.id.pay_dialog));
@@ -206,6 +212,9 @@ public class HomeActivity_Ticket extends AppCompatActivity implements View.OnCli
         builder.show();
     }
 
+    /**
+     * 显示Dialog
+     * */
     private void showDialog() {
         LayoutInflater inflater = getLayoutInflater();
         View Dialog = inflater.inflate(R.layout.dialog_qrcode,(ViewGroup) findViewById(R.id.QRCode_Dialog));
@@ -225,7 +234,6 @@ public class HomeActivity_Ticket extends AppCompatActivity implements View.OnCli
         mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_SETTLING);
         mBottomSheetBehavior.setPeekHeight(150);
         mBottomSheetBehavior.setHideable(false);
-
     }
 
     public void initRecyclerView(){
@@ -236,6 +244,7 @@ public class HomeActivity_Ticket extends AppCompatActivity implements View.OnCli
         mTicketRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
+    //初始化站点信息
     public void initData(){
         if(IsEnd()){
             mDataList.add(new ItemStationData("开始", "起始站",false,true,1));

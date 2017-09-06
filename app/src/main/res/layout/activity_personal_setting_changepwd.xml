@@ -11,7 +11,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/changepwd_oldpwd"
+            android:id="@+id/edittext_setting_changepwd_oldpwd"
             android:textColor="@color/primary_text"
             android:inputType="numberPassword"
             android:background="@drawable/edittext_shape"
@@ -36,42 +36,47 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"></View>
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/changepwd_newpwd"
-            android:textColor="@color/primary_text"
-            android:inputType="numberPassword"
+            android:id="@+id/edittext_setting_changepwd_newpwd"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:background="@drawable/edittext_shape"
             android:hint="请输入新密码"
-            android:textColorHint="@color/hint_text"
+            android:inputType="numberPassword"
+            android:paddingBottom="10dp"
             android:paddingLeft="50dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="48dp" />
+            android:textColor="@color/primary_text"
+            android:textColorHint="@color/hint_text" />
 
         <ImageView
-            android:src="@mipmap/changepwd_icon_key"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
-            android:layout_width="20dp"
-            android:layout_height="20dp" />
+            android:src="@mipmap/changepwd_icon_key" />
 
         <View
-            android:background="@color/divider"
-            android:layout_below="@+id/register_pwd"
             android:layout_width="match_parent"
-            android:layout_height="1dp"></View>
+            android:layout_height="1dp"
+            android:layout_below="@+id/register_pwd"
+            android:background="@color/divider"></View>
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/changepwd_verfiypwd"
+            android:id="@+id/edittext_setting_changepwd_verifypwd"
             android:textColor="@color/primary_text"
             android:inputType="numberPassword"
             android:background="@drawable/edittext_shape"
@@ -98,6 +103,7 @@
     </RelativeLayout>
 
     <Button
+        android:id="@+id/button_setting_changepwd"
         android:text="修改密码"
         android:textColor="@color/primary_white_text"
         android:textSize="18sp"

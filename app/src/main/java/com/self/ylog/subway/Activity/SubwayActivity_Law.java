@@ -10,7 +10,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.self.ylog.subway.Adapter.RecyclerViewCardViewAdapter;
+import com.self.ylog.subway.Adapter.RecyclerViewLifeAndSubwayAdapter;
 import com.self.ylog.subway.R;
 import com.self.ylog.subway.Utils.ItemNewsData;
 
@@ -29,7 +29,7 @@ public class SubwayActivity_Law extends AppCompatActivity{
      * */
     private ImageView mIcon_Back;
     private RecyclerView mSubwayLawRecyclerView;
-    private RecyclerViewCardViewAdapter mSubwayLawRecyclerViewAdapter;
+    private RecyclerViewLifeAndSubwayAdapter mSubwayLawRecyclerViewAdapter;
     private List<ItemNewsData> mDataList;
 
     @Override
@@ -43,7 +43,7 @@ public class SubwayActivity_Law extends AppCompatActivity{
     public void init_RecyclerView(){
         initDataList();
         mSubwayLawRecyclerView=(RecyclerView) findViewById(R.id.Subway_Law_RecyclerView);
-        mSubwayLawRecyclerViewAdapter=new RecyclerViewCardViewAdapter(getContext(),mDataList);
+        mSubwayLawRecyclerViewAdapter=new RecyclerViewLifeAndSubwayAdapter(getContext(),mDataList);
         mSubwayLawRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mSubwayLawRecyclerView.setAdapter(mSubwayLawRecyclerViewAdapter);
     }

@@ -24,25 +24,53 @@ public class RecyclerViewHomeAdapter extends Adapter<RecyclerViewHolder>{
     private List<ItemHomeData> mDataList;
     private LayoutInflater mInflater;
 
+    //设置header
+    public static final int TYPE_FIRST_HEADER = 0;
+    public static final int TYPE_SECOND_HEADER = 1;
+    public static final int TYPE_NORMAL = 2;
+
+    private View mFirstHeaderView;
+
     public RecyclerViewHomeAdapter(Context context, List<ItemHomeData> mDataList){
         mInflater = LayoutInflater.from(context);
         this.mDataList = mDataList;
     }
 
+    public void setFitstHeaderView(View headerView) {
+        mFirstHeaderView = headerView;
+        notifyItemInserted(0);
+    }
+
+    public View getFitstHeaderView() {
+        return mFirstHeaderView;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if(mFirstHeaderView == null) return TYPE_NORMAL;
+        if(position == 0) return TYPE_FIRST_HEADER;
+        return TYPE_NORMAL;
+    }
+
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if(mFirstHeaderView != null && viewType == TYPE_FIRST_HEADER) return new RecyclerViewHolder(mFirstHeaderView);
         RecyclerViewHolder holder=new RecyclerViewHolder(mInflater.inflate(R.layout.recyclerview_home_style,parent,false));
         return holder;
     }
 
     @Override
     public void onBindViewHolder(final RecyclerViewHolder holder, int position) {
-        holder.mHome_Src.setImageResource(mDataList.get(position).home_src);
-        holder.mHome_Title.setText(mDataList.get(position).home_title);
-        holder.mHome_Thumb_Num.setText(mDataList.get(position).home_thumb_text);
-        holder.mHome_Date.setText(mDataList.get(position).home_date);
-        holder.mHome_Time.setText(mDataList.get(position).home_time);
-        holder.isStared=mDataList.get(position).isStared;
+        //判断为首部
+        if(getItemViewType(position) == TYPE_FIRST_HEADER) return;
+        final int realposition = getRealPosition(holder);
+        //判断为RecyclerView
+        holder.mHome_Src.setImageResource(mDataList.get(realposition).home_src);
+        holder.mHome_Title.setText(mDataList.get(realposition).home_title);
+        holder.mHome_Thumb_Num.setText(mDataList.get(realposition).home_thumb_text);
+        holder.mHome_Date.setText(mDataList.get(realposition).home_date);
+        holder.mHome_Time.setText(mDataList.get(realposition).home_time);
+        holder.isStared=mDataList.get(realposition).isStared;
         if(holder.isStared){
             //已经点赞过，点赞按钮设置为已经点击格式
         }
@@ -68,9 +96,14 @@ public class RecyclerViewHomeAdapter extends Adapter<RecyclerViewHolder>{
         super.onViewRecycled(holder);
     }
 
+    public int getRealPosition(RecyclerViewHolder holder) {
+        int position = holder.getLayoutPosition();
+        return mFirstHeaderView == null ? position : position - 1;
+    }
+
     @Override
     public int getItemCount() {
-        return mDataList.size();
+        return mFirstHeaderView == null ? mDataList.size() : mDataList.size() + 1;
     }
 
     static class RecyclerViewHolder extends ViewHolder{

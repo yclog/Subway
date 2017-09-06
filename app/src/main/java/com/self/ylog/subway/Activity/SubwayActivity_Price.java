@@ -10,7 +10,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.self.ylog.subway.Adapter.RecyclerViewCardViewAdapter;
+import com.self.ylog.subway.Adapter.RecyclerViewLifeAndSubwayAdapter;
 import com.self.ylog.subway.R;
 import com.self.ylog.subway.Utils.ItemNewsData;
 
@@ -29,7 +29,7 @@ public class SubwayActivity_Price extends AppCompatActivity{
      * */
     private ImageView mIcon_Back;
     private RecyclerView mSubwayPriceRecyclerView;
-    private RecyclerViewCardViewAdapter mSubwayPriceRecyclerViewAdapter;
+    private RecyclerViewLifeAndSubwayAdapter mSubwayPriceRecyclerViewAdapter;
     private List<ItemNewsData> mDataList;
 
     @Override
@@ -43,7 +43,7 @@ public class SubwayActivity_Price extends AppCompatActivity{
     public void init_RecyclerView(){
         initDataList();
         mSubwayPriceRecyclerView=(RecyclerView) findViewById(R.id.Subway_Price_RecyclerView);
-        mSubwayPriceRecyclerViewAdapter=new RecyclerViewCardViewAdapter(getContext(),mDataList);
+        mSubwayPriceRecyclerViewAdapter=new RecyclerViewLifeAndSubwayAdapter(getContext(),mDataList);
         mSubwayPriceRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mSubwayPriceRecyclerView.setAdapter(mSubwayPriceRecyclerViewAdapter);
     }
