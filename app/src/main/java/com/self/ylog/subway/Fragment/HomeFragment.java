@@ -176,7 +176,7 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
             }
         };
         mTimer = new Timer();
-        mTimer.schedule(mTimertask,0,5000);
+        mTimer.schedule(mTimertask,0,8000);
     }
 
     public void init_RecyclerView(View view){
@@ -187,28 +187,12 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
 
         mHomeRecyclerView.setAdapter(mHomeRecyclerViewAdapter);
         setHeader(mHomeRecyclerView);
-        setHeaderHeight(mHomeRecyclerView);
     }
 
     private void setHeader(RecyclerView view) {
         View header = LayoutInflater.from(getContext()).inflate(R.layout.subheader_home, view, false);
         mHomeRecyclerViewAdapter.setFitstHeaderView(header);
         init_HeaderView(header);
-    }
-
-    //设置当前HeaderBody底部位置进入LayoutParam类
-    public void setHeaderHeight(final RecyclerView mHomeRecyclerView){
-        ViewTreeObserver mVto = mHomeRecyclerView.getViewTreeObserver();
-        mVto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                mHomeRecyclerView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                LayoutParam.getInstance().setHomeHeaderHeight(mHomeRecyclerView.getHeight());
-                LayoutParam.getInstance().setHomeHeaderBottom(mHomeRecyclerView.getBottom());
-                Log.d("test", "RecyclerView Bottom: "+LayoutParam.getInstance().getHomeHeaderBottom());
-                Log.d("test", "ViewTreeObserver Instance: "+LayoutParam.getInstance());
-            }
-        });
     }
 
     //初始化主界面新闻卡片数据

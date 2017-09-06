@@ -7,23 +7,10 @@
 
     <include layout="@layout/titlebar_home"></include>
 
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/Home_RecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/Home_RecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </android.support.v7.widget.RecyclerView>
-
-        </LinearLayout>
-
-    </LinearLayout>
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
