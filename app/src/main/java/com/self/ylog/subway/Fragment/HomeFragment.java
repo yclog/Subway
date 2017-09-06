@@ -149,7 +149,7 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
                 if (position==0)
                     mHomeAdViewPager.setCurrentItem(4,false);
                 else if (position==5)
-                    mHomeAdViewPager.setCurrentItem(1,false);
+                    mHomeAdViewPager.setCurrentItem(1);
             }
             @Override
             public void onPageScrollStateChanged(int state) {

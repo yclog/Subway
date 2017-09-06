@@ -160,16 +160,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bottom_menu_one_Layout:
-                Navigation_ViewPager.setCurrentItem(0);
+                Navigation_ViewPager.setCurrentItem(0,false);
                 break;
             case R.id.bottom_menu_two_Layout:
-                Navigation_ViewPager.setCurrentItem(1);
+                Navigation_ViewPager.setCurrentItem(1,false);
                 break;
             case R.id.bottom_menu_three_Layout:
-                Navigation_ViewPager.setCurrentItem(2);
+                Navigation_ViewPager.setCurrentItem(2,false);
                 break;
             case R.id.bottom_menu_four_Layout:
-                Navigation_ViewPager.setCurrentItem(3);
+                Navigation_ViewPager.setCurrentItem(3,false);
         }
     }
 
