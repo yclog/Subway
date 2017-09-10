@@ -59,7 +59,7 @@ public class LifeFragment extends android.support.v4.app.Fragment implements Vie
     }
 
     private void setHeader(RecyclerView view) {
-        View header = LayoutInflater.from(getContext()).inflate(R.layout.subheader_life, view, false);
+        View header = LayoutInflater.from(getContext()).inflate(R.layout.recyclerview_header_life, view, false);
         mLifeRecyclerViewAdapter.setHeaderView(header);
         initView(header);
     }

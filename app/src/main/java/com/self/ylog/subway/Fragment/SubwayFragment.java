@@ -76,7 +76,7 @@ public class SubwayFragment extends android.support.v4.app.Fragment implements V
     }
 
     private void setHeader(RecyclerView view) {
-        View header = LayoutInflater.from(getContext()).inflate(R.layout.subheader_subway, view, false);
+        View header = LayoutInflater.from(getContext()).inflate(R.layout.recyclerview_header_subway, view, false);
         mSubwayRecyclerViewAdaper.setHeaderView(header);
         initView(header);
     }

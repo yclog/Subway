@@ -8,11 +8,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import com.self.ylog.subway.Activity.HomeActivity_LiveStream;
@@ -27,7 +25,6 @@ import com.self.ylog.subway.Adapter.HomeViewpagerAdapter;
 import com.self.ylog.subway.Adapter.RecyclerViewHomeAdapter;
 import com.self.ylog.subway.R;
 import com.self.ylog.subway.Utils.ItemHomeData;
-import com.self.ylog.subway.Utils.LayoutParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -146,10 +143,11 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
             public void onPageSelected(int position) {
                 //循环控制
                 CurrentItem=position;
-                if (position==0)
+                if (position==0) {
                     mHomeAdViewPager.setCurrentItem(4,false);
+                }
                 else if (position==5)
-                    mHomeAdViewPager.setCurrentItem(1);
+                    mHomeAdViewPager.setCurrentItem(1,false);
             }
             @Override
             public void onPageScrollStateChanged(int state) {
@@ -190,7 +188,7 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
     }
 
     private void setHeader(RecyclerView view) {
-        View header = LayoutInflater.from(getContext()).inflate(R.layout.subheader_home, view, false);
+        View header = LayoutInflater.from(getContext()).inflate(R.layout.recyclerview_header_home, view, false);
         mHomeRecyclerViewAdapter.setFitstHeaderView(header);
         init_HeaderView(header);
     }
