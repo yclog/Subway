@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="sldinglayout-0.9.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/e446e6dda7554ea98fad86b4089e5cddbc3365ab/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/e446e6dda7554ea98fad86b4089e5cddbc3365ab/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/homhomlin.lib/sldinglayout/0.9.0/6b0435c29c12442239b92fe14fd570a6eaf46bd7/sldinglayout-0.9.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="E:\Android\Subway\app\libs\core-3.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="73c49077166faa4c3c0059c5f583d1d7bd1475fe">
+        <dex dex="E:\Android\Subway\app\build\intermediates\transforms\dex\debug\folders\1000\2\core-3.3.0_86bdb5c5d29ae4ec6b2a3d2de5115331e22ad2df\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android\Subway\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="E:\Android\Subway\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_098cca51ac29df479f31ff06abe9ada7a20906c8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android\Subway\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="228eea7a0ba60663b7c67c428c21606575ebefcf">
+        <dex dex="E:\Android\Subway\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_c68b288ac907d7540313c34b120993e5fafb48f6\classes.dex" />
+    </item>
+
+</items>
