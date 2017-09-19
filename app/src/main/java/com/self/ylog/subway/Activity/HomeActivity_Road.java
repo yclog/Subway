@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.self.ylog.subway.R;
-import com.self.ylog.subway.View.PaintView;
 
 /**
  * Created by cylog on 2017/5/24.
@@ -21,7 +20,7 @@ public class HomeActivity_Road extends AppCompatActivity{
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
+    private ImageView mIconBack;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,8 +34,8 @@ public class HomeActivity_Road extends AppCompatActivity{
      *  findViewById
      * */
     public void initView(){
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 HomeActivity_Road.this.finish();

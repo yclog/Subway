@@ -27,7 +27,7 @@ public class PersonalActivity_Route extends AppCompatActivity{
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
+    private ImageView mIconBack;
     /**
      * 行程订单（RecyclerView）
      * */
@@ -41,10 +41,10 @@ public class PersonalActivity_Route extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_order);
         initView();
-        init_RecyclerView();
+        initRecyclerView();
     }
 
-    public void init_RecyclerView(){
+    public void initRecyclerView(){
         initDataList();
         mOrderRecyclerView=(RecyclerView)findViewById(R.id.Order_RecyclerView);
         mOrderRecyclerViewAdapter =new RecyclerViewOrderAdapter(getContext(),mDataList);
@@ -69,8 +69,8 @@ public class PersonalActivity_Route extends AppCompatActivity{
      *  findViewById
      * */
     public void initView(){
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PersonalActivity_Route.this.finish();

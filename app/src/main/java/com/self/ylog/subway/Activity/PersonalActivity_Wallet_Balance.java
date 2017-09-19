@@ -21,8 +21,8 @@ public class PersonalActivity_Wallet_Balance extends AppCompatActivity{
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
-    private TextView mPersonal_Wallet_Balance_Textview;
+    private ImageView mIconBack;
+    private TextView mPersonalWalletBalanceTextView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,14 +36,14 @@ public class PersonalActivity_Wallet_Balance extends AppCompatActivity{
      *  findViewById
      * */
     public void initView(){
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PersonalActivity_Wallet_Balance.this.finish();
             }
         });
-        mPersonal_Wallet_Balance_Textview=(TextView) findViewById(R.id.textview_personal_wallet_balance);
+        mPersonalWalletBalanceTextView =(TextView) findViewById(R.id.textview_personal_wallet_balance);
     }
     /**
      * 重写返回键

@@ -22,8 +22,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private TextView mTele;
     private TextView mPasswd;
     private TextView mForgetPwd;
-    private Button Login_btn;
-    private Button Register_btn;
+    private Button mLoginBtn;
+    private Button mRegisterBtn;
     //登陆失败
     private static int LOGIN_FAILED=0;
     //登陆成功
@@ -41,19 +41,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        init_View();
+        initView();
     }
 
     //初始化控件
-    private void init_View(){
+    private void initView(){
         mTele=(TextView) findViewById(R.id.login_tele);
         mPasswd=(TextView) findViewById(R.id.login_pwd);
         mForgetPwd=(TextView) findViewById(R.id.login_forget);
         mForgetPwd.setOnClickListener(this);
-        Login_btn=(Button) findViewById(R.id.login_btn);
-        Login_btn.setOnClickListener(this);
-        Register_btn=(Button) findViewById(R.id.login_register);
-        Register_btn.setOnClickListener(this);
+        mLoginBtn =(Button) findViewById(R.id.login_btn);
+        mLoginBtn.setOnClickListener(this);
+        mRegisterBtn =(Button) findViewById(R.id.login_register);
+        mRegisterBtn.setOnClickListener(this);
     }
 
     @Override
@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             }
             case R.id.login_btn:{
-                Login();
+                toLogin();
                 break;
             }
             case R.id.login_register:{
@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     /**
      * 登陆
      * */
-    private void Login(){
+    private void toLogin(){
         //用户账号密码
         String tele=mTele.getText().toString();
         String passwd=mPasswd.getText().toString();

@@ -27,7 +27,7 @@ public class SubwayActivity_Price extends AppCompatActivity{
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
+    private ImageView mIconBack;
     private RecyclerView mSubwayPriceRecyclerView;
     private RecyclerViewLifeAndSubwayAdapter mSubwayPriceRecyclerViewAdapter;
     private List<ItemNewsData> mDataList;
@@ -37,10 +37,10 @@ public class SubwayActivity_Price extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subway_price);
         initView();
-        init_RecyclerView();
+        initRecyclerView();
     }
 
-    public void init_RecyclerView(){
+    public void initRecyclerView(){
         initDataList();
         mSubwayPriceRecyclerView=(RecyclerView) findViewById(R.id.Subway_Price_RecyclerView);
         mSubwayPriceRecyclerViewAdapter=new RecyclerViewLifeAndSubwayAdapter(getContext(),mDataList);
@@ -60,8 +60,8 @@ public class SubwayActivity_Price extends AppCompatActivity{
      *  findViewById
      * */
     public void initView(){
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SubwayActivity_Price.this.finish();

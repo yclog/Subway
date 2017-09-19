@@ -20,7 +20,7 @@ public class PersonalActivity_Coupon extends AppCompatActivity{
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
+    private ImageView mIconBack;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,8 +34,8 @@ public class PersonalActivity_Coupon extends AppCompatActivity{
      *  findViewById
      * */
     public void initView(){
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PersonalActivity_Coupon.this.finish();

@@ -8,8 +8,8 @@ public class LoginState {
     private static LoginState mLoginState;
     private static boolean STATE_LOGIN =true;
     private static boolean STATE_UNLOGIN =false;
-    private boolean CurrentState=STATE_UNLOGIN;
-    private boolean IsFirstLogin =false;
+    private boolean mCurrentState =STATE_UNLOGIN;
+    private boolean mIsFirstLogin =false;
 
     public static synchronized LoginState getInstance(){
         if (mLoginState == null) {
@@ -27,14 +27,14 @@ public class LoginState {
     }
 
     public boolean getLoginState(){
-        return CurrentState;
+        return mCurrentState;
     }
 
     public void setLoginState(boolean mState){
         if (mState)
-            CurrentState= STATE_LOGIN;
+            mCurrentState = STATE_LOGIN;
         else
-            CurrentState= STATE_UNLOGIN;
+            mCurrentState = STATE_UNLOGIN;
     }
 
     public static LoginState getmLoginState() {
@@ -45,11 +45,11 @@ public class LoginState {
         LoginState.mLoginState = mLoginState;
     }
 
-    public boolean isFirstLogin() {
-        return IsFirstLogin;
+    public boolean ismIsFirstLogin() {
+        return mIsFirstLogin;
     }
 
-    public void setFirstLogin(boolean firstLogin) {
-        IsFirstLogin = firstLogin;
+    public void setmIsFirstLogin(boolean mIsFirstLogin) {
+        this.mIsFirstLogin = mIsFirstLogin;
     }
 }

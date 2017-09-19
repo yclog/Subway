@@ -27,7 +27,7 @@ public class SubwayActivity_Secure extends AppCompatActivity{
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
+    private ImageView mIconBack;
     private RecyclerView mSubwaySecureRecyclerView;
     private RecyclerViewLifeAndSubwayAdapter mSubwaySecureRecyclerViewAdapter;
     private List<ItemNewsData> mDataList;
@@ -37,10 +37,10 @@ public class SubwayActivity_Secure extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subway_secure);
         initView();
-        init_RecyclerView();
+        initRecyclerView();
     }
 
-    public void init_RecyclerView(){
+    public void initRecyclerView(){
         initDataList();
         mSubwaySecureRecyclerView=(RecyclerView) findViewById(R.id.Subway_Secure_RecyclerView);
         mSubwaySecureRecyclerViewAdapter=new RecyclerViewLifeAndSubwayAdapter(getContext(),mDataList);
@@ -60,8 +60,8 @@ public class SubwayActivity_Secure extends AppCompatActivity{
      *  findViewById
      * */
     public void initView(){
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SubwayActivity_Secure.this.finish();

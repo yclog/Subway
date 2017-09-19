@@ -21,12 +21,12 @@ public class PersonalActivity_Info_nickname extends AppCompatActivity{
     /**
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
+    private ImageView mIconBack;
     /**
      * @control 界面内控件
      * */
-    private EditText mInfo_Nickname;
-    private Button mInfo_Confirm;
+    private EditText mInfoNickName;
+    private Button mInfoConfirm;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,19 +40,19 @@ public class PersonalActivity_Info_nickname extends AppCompatActivity{
      *  findViewById
      * */
     public void initView(){
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PersonalActivity_Info_nickname.this.finish();
             }
         });
-        mInfo_Nickname=(EditText) findViewById(R.id.edittext_personal_info_nickname);
-        mInfo_Confirm=(Button) findViewById(R.id.button_personal_confirm);
-        mInfo_Confirm.setOnClickListener(new View.OnClickListener() {
+        mInfoNickName =(EditText) findViewById(R.id.edittext_personal_info_nickname);
+        mInfoConfirm =(Button) findViewById(R.id.button_personal_confirm);
+        mInfoConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Save_NickName();
+                saveNickName();
             }
         });
     }
@@ -79,10 +79,10 @@ public class PersonalActivity_Info_nickname extends AppCompatActivity{
     /**
      * 设置用户名
      * */
-    private void Save_NickName(){
+    private void saveNickName(){
         //用户昵称
         String nickname;
-        nickname=mInfo_Nickname.getText().toString();
+        nickname= mInfoNickName.getText().toString();
         //保存并同步网络
 
     }

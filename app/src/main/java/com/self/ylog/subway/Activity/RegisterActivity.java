@@ -24,15 +24,15 @@ public class RegisterActivity extends AppCompatActivity{
     /**
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Cancel;
+    private ImageView mIconCancel;
     /**
      * @control 主界面控件
      * */
     private EditText mTele;
     private EditText mVerifyCode;
     private EditText mPasswd;
-    private Button mRegister_btn;
-    private Button mGetVerifyCode_btn;
+    private Button mRegisterBtn;
+    private Button mGetVerifyCodeBtn;
     //注册账号无效
     private static String REGISTER_INVAILD_ACCOUNT="此账号已经存在";
     //注册密码无效
@@ -57,8 +57,8 @@ public class RegisterActivity extends AppCompatActivity{
      * */
     public void initView(){
         //titlebar控件
-        mIcon_Cancel=(ImageView) findViewById(R.id.icon_cancel);
-        mIcon_Cancel.setOnClickListener(new View.OnClickListener() {
+        mIconCancel =(ImageView) findViewById(R.id.icon_cancel);
+        mIconCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 RegisterActivity.this.finish();
@@ -68,18 +68,18 @@ public class RegisterActivity extends AppCompatActivity{
         mTele=(EditText) findViewById(R.id.register_tele);
         mPasswd=(EditText) findViewById(R.id.register_pwd);
         mVerifyCode=(EditText) findViewById(R.id.register_code);
-        mRegister_btn=(Button) findViewById(R.id.register_btn);
-        mRegister_btn.setOnClickListener(new View.OnClickListener() {
+        mRegisterBtn =(Button) findViewById(R.id.register_btn);
+        mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Register();
+                toRegister();
             }
         });
-        mGetVerifyCode_btn=(Button) findViewById(R.id.getVerifyCode_btn);
-        mGetVerifyCode_btn.setOnClickListener(new View.OnClickListener() {
+        mGetVerifyCodeBtn =(Button) findViewById(R.id.getVerifyCode_btn);
+        mGetVerifyCodeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GetVerifyCode();
+                getVerifyCode();
             }
         });
     }
@@ -106,7 +106,7 @@ public class RegisterActivity extends AppCompatActivity{
     /**
      * 注册
      * */
-    private void Register(){
+    private void toRegister(){
         //用户账号密码
         String tele=mTele.getText().toString();
         String verifycode=mVerifyCode.getText().toString();
@@ -131,7 +131,7 @@ public class RegisterActivity extends AppCompatActivity{
     /**
      * 获取验证码
      * */
-    private void GetVerifyCode(){
+    private void getVerifyCode(){
         //注册手机号
         String tele=mTele.getText().toString();
         //发送验证请求，获取验证码到手机

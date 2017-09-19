@@ -22,10 +22,10 @@ public class PersonalActivity_Wallet extends AppCompatActivity implements View.O
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
-    private RelativeLayout mPersonal_Wallet_Payment;
-    private RelativeLayout mPersonal_Wallet_Balance;
-    private RelativeLayout mPersonal_Wallet_Coupon;
+    private ImageView mIconBack;
+    private RelativeLayout mPersonalWalletPayment;
+    private RelativeLayout mPersonalWalletBalance;
+    private RelativeLayout mPersonalWalletCoupon;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,14 +39,14 @@ public class PersonalActivity_Wallet extends AppCompatActivity implements View.O
      *  findViewById
      * */
     public void initView(){
-        mPersonal_Wallet_Payment=(RelativeLayout) findViewById(R.id.personal_wallet_payment);
-        mPersonal_Wallet_Payment.setOnClickListener(this);
-        mPersonal_Wallet_Balance=(RelativeLayout) findViewById(R.id.textview_personal_wallet_balance);
-        mPersonal_Wallet_Balance.setOnClickListener(this);
-        mPersonal_Wallet_Coupon=(RelativeLayout) findViewById(R.id.personal_wallet_coupon);
-        mPersonal_Wallet_Coupon.setOnClickListener(this);
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mPersonalWalletPayment =(RelativeLayout) findViewById(R.id.personal_wallet_payment);
+        mPersonalWalletPayment.setOnClickListener(this);
+        mPersonalWalletBalance =(RelativeLayout) findViewById(R.id.textview_personal_wallet_balance);
+        mPersonalWalletBalance.setOnClickListener(this);
+        mPersonalWalletCoupon =(RelativeLayout) findViewById(R.id.personal_wallet_coupon);
+        mPersonalWalletCoupon.setOnClickListener(this);
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PersonalActivity_Wallet.this.finish();

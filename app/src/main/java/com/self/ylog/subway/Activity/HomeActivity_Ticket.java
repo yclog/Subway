@@ -29,7 +29,6 @@ import com.google.zxing.qrcode.QRCodeWriter;
 import com.self.ylog.subway.Adapter.RecyclerViewTicketAdapter;
 import com.self.ylog.subway.R;
 import com.self.ylog.subway.Utils.ItemStationData;
-import com.self.ylog.subway.Utils.LayoutParam;
 
 import static com.self.ylog.subway.Utils.DebugTag.BUYSTATIONDATA;
 import static com.self.ylog.subway.Utils.StationConstant.*;
@@ -67,9 +66,9 @@ public class HomeActivity_Ticket extends AppCompatActivity implements View.OnCli
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Home;
-    private TextView mPick_Start;
-    private TextView mPick_End;
+    private ImageView mIconHome;
+    private TextView mPickStart;
+    private TextView mPickEnd;
 
     //recyclerview控件参数
     private RecyclerView mTicketRecyclerView;
@@ -82,7 +81,7 @@ public class HomeActivity_Ticket extends AppCompatActivity implements View.OnCli
     //Dialog二维码显示
     private ImageView mQRCode;
 
-    private TextView mTextview;
+    private TextView mTextView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -132,14 +131,14 @@ public class HomeActivity_Ticket extends AppCompatActivity implements View.OnCli
      * */
     public void initView(){
         initBottomSheet();
-        mPick_Start=(TextView) findViewById(R.id.pick_start);
-        mPick_Start.setOnClickListener(this);
-        mPick_End=(TextView) findViewById(R.id.pick_end);
-        mPick_End.setOnClickListener(this);
+        mPickStart =(TextView) findViewById(R.id.pick_start);
+        mPickStart.setOnClickListener(this);
+        mPickEnd =(TextView) findViewById(R.id.pick_end);
+        mPickEnd.setOnClickListener(this);
         initRecyclerView();
 
-        mIcon_Home=(ImageView) findViewById(R.id.icon_home);
-        mIcon_Home.setOnClickListener(new View.OnClickListener() {
+        mIconHome =(ImageView) findViewById(R.id.icon_home);
+        mIconHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 HomeActivity_Ticket.this.finish();
@@ -197,9 +196,9 @@ public class HomeActivity_Ticket extends AppCompatActivity implements View.OnCli
     public void payDialog(){
         LayoutInflater inflater = getLayoutInflater();
         View Dialog = inflater.inflate(R.layout.pay_dialog,(ViewGroup) findViewById(R.id.pay_dialog));
-        mTextview=(TextView) Dialog.findViewById(R.id.buy_ticket_text_secondary);
+        mTextView =(TextView) Dialog.findViewById(R.id.buy_ticket_text_secondary);
         String test=mStartStationLabel+"-->"+mEndStationLabel+" 6元";
-        mTextview.setText(test);
+        mTextView.setText(test);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {

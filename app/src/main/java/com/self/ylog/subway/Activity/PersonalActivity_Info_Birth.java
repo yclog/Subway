@@ -27,29 +27,29 @@ public class PersonalActivity_Info_Birth extends AppCompatActivity implements Vi
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
+    private ImageView mIconBack;
 
-    private Button mPersonal_Info_Birth_btn;
+    private Button mPersonalInfoBirthBtn;
     private TimePickerView mTimePickerView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_info_birth);
-        init_view();
+        initView();
         initTimePicker();
     }
 
-    public void init_view(){
-        mPersonal_Info_Birth_btn =(Button) findViewById(R.id.personal_info_birth_btn);
-        mPersonal_Info_Birth_btn.setOnClickListener(new View.OnClickListener() {
+    public void initView(){
+        mPersonalInfoBirthBtn =(Button) findViewById(R.id.personal_info_birth_btn);
+        mPersonalInfoBirthBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mTimePickerView.show(v);
             }
         });
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PersonalActivity_Info_Birth.this.finish();
@@ -108,8 +108,8 @@ public class PersonalActivity_Info_Birth extends AppCompatActivity implements Vi
     }
 
     private String getTime(Date date) {//可根据需要自行截取数据显示
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        return format.format(date);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return dateFormat.format(date);
     }
 
     /**

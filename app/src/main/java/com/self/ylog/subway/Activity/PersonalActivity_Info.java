@@ -22,10 +22,10 @@ public class PersonalActivity_Info extends AppCompatActivity implements View.OnC
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
-    private RelativeLayout mPersonal_Info_Avatar;
-    private RelativeLayout mPersonal_Info_Nickname;
-    private RelativeLayout mPersonal_Info_Birth;
+    private ImageView mIconBack;
+    private RelativeLayout mPersonalInfoAvatar;
+    private RelativeLayout mPersonalInfoNickName;
+    private RelativeLayout mPersonalInfoBirth;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,14 +39,14 @@ public class PersonalActivity_Info extends AppCompatActivity implements View.OnC
      *  findViewById
      * */
     public void initView(){
-        mPersonal_Info_Avatar=(RelativeLayout) findViewById(R.id.personal_info_avatar);
-        mPersonal_Info_Avatar.setOnClickListener(this);
-        mPersonal_Info_Nickname=(RelativeLayout) findViewById(R.id.personal_info_nickname);
-        mPersonal_Info_Nickname.setOnClickListener(this);
-        mPersonal_Info_Birth=(RelativeLayout) findViewById(R.id.personal_info_birth);
-        mPersonal_Info_Birth.setOnClickListener(this);
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mPersonalInfoAvatar =(RelativeLayout) findViewById(R.id.personal_info_avatar);
+        mPersonalInfoAvatar.setOnClickListener(this);
+        mPersonalInfoNickName =(RelativeLayout) findViewById(R.id.personal_info_nickname);
+        mPersonalInfoNickName.setOnClickListener(this);
+        mPersonalInfoBirth =(RelativeLayout) findViewById(R.id.personal_info_birth);
+        mPersonalInfoBirth.setOnClickListener(this);
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PersonalActivity_Info.this.finish();

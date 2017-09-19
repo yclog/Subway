@@ -60,31 +60,31 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
     private RelativeLayout mHomeWifi;
     private RelativeLayout mHomeLivestream;
     //titlebar控件
-    private ImageView mTitlebar_Scan;
+    private ImageView mTitlebarScan;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_home,container,false);
-        init_TitleBarView(view);
+        initTitleBarView(view);
         //实例化主界面Home_RecyclerView
-        init_RecyclerView(view);
+        initRecyclerView(view);
         return view;
     }
 
-    public void init_TitleBarView(View view){
-        mTitlebar_Scan=(ImageView) view.findViewById(R.id.titlebar_scan);
-        mTitlebar_Scan.setOnClickListener(this);
+    public void initTitleBarView(View view){
+        mTitlebarScan =(ImageView) view.findViewById(R.id.titlebar_scan);
+        mTitlebarScan.setOnClickListener(this);
     }
 
-    public void init_HeaderView(View view){
+    public void initHeaderView(View view){
         //实例化主界面宣传栏Home_Ad_ViewPager
-        init_HomeViewPagerAd(view);
+        initHomeViewPagerAd(view);
         //实例化子界面内控件
-        init_subheaderview(view);
+        initSubHeaderView(view);
     }
 
-    public void init_subheaderview(View view){
+    public void initSubHeaderView(View view){
         /**
          * subheader内控件实例化
          * 为每个subheader itemview设置点击事件
@@ -109,7 +109,7 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
     /**
      * 主页滚动viewpager广告栏实例化
      * */
-    public void init_HomeViewPagerAd(View view){
+    public void initHomeViewPagerAd(View view){
         CurrentItem=1;
         mHomeAdViewPager =(ViewPager) view.findViewById(R.id.Home_Ad_ViewPager);
         ImageList=new ArrayList<ImageView>();
@@ -160,13 +160,13 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
         HomeViewpagerAdapter adapter=new HomeViewpagerAdapter(mHomeAdViewPager,ImageList);
         mHomeAdViewPager.setAdapter(adapter);
         mHomeAdViewPager.setCurrentItem(CurrentItem);
-        Time_PagerScroll();
+        timePagerScroll();
     }
 
     /**
      * 主页滚动viewpager广告栏定时自动滚动
      * */
-    public void Time_PagerScroll(){
+    public void timePagerScroll(){
         mTimertask = new TimerTask() {
             @Override
             public void run() {
@@ -177,7 +177,7 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
         mTimer.schedule(mTimertask,0,8000);
     }
 
-    public void init_RecyclerView(View view){
+    public void initRecyclerView(View view){
         initDataList();
         mHomeRecyclerView=(RecyclerView) view.findViewById(R.id.Home_RecyclerView);
         mHomeRecyclerViewAdapter =new RecyclerViewHomeAdapter(getContext(),mDataList);
@@ -190,7 +190,7 @@ public class HomeFragment extends android.support.v4.app.Fragment implements Vie
     private void setHeader(RecyclerView view) {
         View header = LayoutInflater.from(getContext()).inflate(R.layout.recyclerview_header_home, view, false);
         mHomeRecyclerViewAdapter.setFitstHeaderView(header);
-        init_HeaderView(header);
+        initHeaderView(header);
     }
 
     //初始化主界面新闻卡片数据

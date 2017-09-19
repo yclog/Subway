@@ -9,23 +9,23 @@ import java.util.List;
 
 public class FragmentPagerAdapter extends FragmentStatePagerAdapter {
 
-	private List<Fragment> fragList;
-	public FragmentPagerAdapter(FragmentManager fm, List<Fragment> fragList) {
+	private List<Fragment> mFragList;
+	public FragmentPagerAdapter(FragmentManager fm, List<Fragment> mFragList) {
 		super(fm);
 		// TODO Auto-generated constructor stub
-		this.fragList=fragList;
+		this.mFragList = mFragList;
 	}
 
 	@Override
 	public Fragment getItem(int arg0) {
 		// TODO Auto-generated method stub
-		return fragList.get(arg0);
+		return mFragList.get(arg0);
 	}
 
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return fragList.size();
+		return mFragList.size();
 	}
 	
 	@Override

@@ -24,12 +24,12 @@ public class PersonalActivity_Setting extends AppCompatActivity implements View.
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
-    private RelativeLayout mPersonal_Setting_ChangeLanguage;
-    private RelativeLayout mPersonal_Setting_ChangePhone;
-    private RelativeLayout mPersonal_Setting_Exit;
-    private RelativeLayout mPersonal_Setting_ChangePwd;
-    private Button mPersonal_Setting_LogOut;
+    private ImageView mIconBack;
+    private RelativeLayout mPersonalSettingChangeLanguage;
+    private RelativeLayout mPersonalSettingChangePhone;
+    private RelativeLayout mPersonalSettingExit;
+    private RelativeLayout mPersonalSettingChangePassword;
+    private Button mPersonalSettingLoginOut;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
@@ -43,18 +43,18 @@ public class PersonalActivity_Setting extends AppCompatActivity implements View.
      *  findViewById
      * */
     public void initView(){
-        mPersonal_Setting_ChangeLanguage=(RelativeLayout) findViewById(R.id.personal_setting_changelanguage);
-        mPersonal_Setting_ChangeLanguage.setOnClickListener(this);
-        mPersonal_Setting_ChangePhone=(RelativeLayout) findViewById(R.id.personal_setting_changephone);
-        mPersonal_Setting_ChangePhone.setOnClickListener(this);
-        mPersonal_Setting_Exit=(RelativeLayout) findViewById(R.id.personal_setting_exit);
-        mPersonal_Setting_Exit.setOnClickListener(this);
-        mPersonal_Setting_ChangePwd=(RelativeLayout) findViewById(R.id.personal_setting_changpwd);
-        mPersonal_Setting_ChangePwd.setOnClickListener(this);
-        mPersonal_Setting_LogOut=(Button) findViewById(R.id.personal_setting_logout);
-        mPersonal_Setting_LogOut.setOnClickListener(this);
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mPersonalSettingChangeLanguage =(RelativeLayout) findViewById(R.id.personal_setting_changelanguage);
+        mPersonalSettingChangeLanguage.setOnClickListener(this);
+        mPersonalSettingChangePhone =(RelativeLayout) findViewById(R.id.personal_setting_changephone);
+        mPersonalSettingChangePhone.setOnClickListener(this);
+        mPersonalSettingExit =(RelativeLayout) findViewById(R.id.personal_setting_exit);
+        mPersonalSettingExit.setOnClickListener(this);
+        mPersonalSettingChangePassword =(RelativeLayout) findViewById(R.id.personal_setting_changpwd);
+        mPersonalSettingChangePassword.setOnClickListener(this);
+        mPersonalSettingLoginOut =(Button) findViewById(R.id.personal_setting_logout);
+        mPersonalSettingLoginOut.setOnClickListener(this);
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PersonalActivity_Setting.this.finish();

@@ -24,14 +24,14 @@ public class PersonalActivity_Setting_ChangePwd extends AppCompatActivity{
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
+    private ImageView mIconBack;
     /**
      * @control 主界面控件
      * */
-    private EditText mEditText_Setting_ChangePwd_Oldpwd;
-    private EditText mEditText_Setting_ChangePwd_Newpwd;
-    private EditText mEditText_Setting_ChangePwd_Verifypwd;
-    private Button mButton_Setting_Changepwd;
+    private EditText mEditTextSettingChangePasswordOldPassword;
+    private EditText mEditTextSettingChangePasswordNewPassword;
+    private EditText mEditTextSettingChangePasswordVerifyPassword;
+    private Button mButtonSettingChangePassword;
 
     //填入密码信息为空
     private static String EMPTY_MESSAGE="密码不可为空";
@@ -50,21 +50,21 @@ public class PersonalActivity_Setting_ChangePwd extends AppCompatActivity{
      *  findViewById
      * */
     public void initView(){
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PersonalActivity_Setting_ChangePwd.this.finish();
             }
         });
-        mEditText_Setting_ChangePwd_Oldpwd=(EditText) findViewById(R.id.edittext_setting_changepwd_oldpwd);
-        mEditText_Setting_ChangePwd_Newpwd=(EditText) findViewById(R.id.edittext_setting_changepwd_newpwd);
-        mEditText_Setting_ChangePwd_Verifypwd=(EditText) findViewById(R.id.edittext_setting_changepwd_verifypwd);
-        mButton_Setting_Changepwd=(Button) findViewById(R.id.button_setting_changepwd);
-        mButton_Setting_Changepwd.setOnClickListener(new View.OnClickListener() {
+        mEditTextSettingChangePasswordOldPassword =(EditText) findViewById(R.id.edittext_setting_changepwd_oldpwd);
+        mEditTextSettingChangePasswordNewPassword =(EditText) findViewById(R.id.edittext_setting_changepwd_newpwd);
+        mEditTextSettingChangePasswordVerifyPassword =(EditText) findViewById(R.id.edittext_setting_changepwd_verifypwd);
+        mButtonSettingChangePassword =(Button) findViewById(R.id.button_setting_changepwd);
+        mButtonSettingChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changePasswd();
+                changePassword();
             }
         });
     }
@@ -91,14 +91,14 @@ public class PersonalActivity_Setting_ChangePwd extends AppCompatActivity{
     /**
      * 修改密码
      * */
-    private void changePasswd(){
+    private void changePassword(){
         //新旧密码
         String oldpasswd;
         String newpasswd;
         String verifypasswd;
-        oldpasswd=mEditText_Setting_ChangePwd_Oldpwd.getText().toString();
-        newpasswd=mEditText_Setting_ChangePwd_Newpwd.getText().toString();
-        verifypasswd=mEditText_Setting_ChangePwd_Verifypwd.getText().toString();
+        oldpasswd= mEditTextSettingChangePasswordOldPassword.getText().toString();
+        newpasswd= mEditTextSettingChangePasswordNewPassword.getText().toString();
+        verifypasswd= mEditTextSettingChangePasswordVerifyPassword.getText().toString();
         //判空
         if (TextUtils.isEmpty(oldpasswd)||TextUtils.isEmpty(newpasswd)||TextUtils.isEmpty(verifypasswd)){
             Toast.makeText(getContext(),EMPTY_MESSAGE,Toast.LENGTH_SHORT).show();

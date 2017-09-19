@@ -16,7 +16,7 @@ import static com.self.ylog.subway.Utils.DebugTag.BUYSTATIONDATA;
 import static com.self.ylog.subway.Utils.StationConstant.*;
 import com.self.ylog.subway.Adapter.RecyclerViewStationLineAdapter;
 import com.self.ylog.subway.R;
-import com.self.ylog.subway.Utils.ItemStationLineData;
+import com.self.ylog.subway.Utils.itemStationLineData;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,8 +41,8 @@ public class HomeActivity_Ticket_PickEnd extends AppCompatActivity{
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
-    private List<ItemStationLineData> mDataList;
+    private ImageView mIconBack;
+    private List<itemStationLineData> mDataList;
     private RecyclerView mPickStartRecyclerView;
     private RecyclerViewStationLineAdapter mRecyclerViewStationLineAdapter;
 
@@ -78,9 +78,9 @@ public class HomeActivity_Ticket_PickEnd extends AppCompatActivity{
      *  findViewById
      * */
     public void initView(){
-        init_RecyclerView();
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        initRecyclerView();
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 HomeActivity_Ticket_PickEnd.this.finish();
@@ -88,7 +88,7 @@ public class HomeActivity_Ticket_PickEnd extends AppCompatActivity{
         });
     }
 
-    public void init_RecyclerView(){
+    public void initRecyclerView(){
         initDataList();
         mPickStartRecyclerView=(RecyclerView)findViewById(R.id.StationEnd_RecyclerView);
         mRecyclerViewStationLineAdapter =new RecyclerViewStationLineAdapter(getContext(),mDataList);
@@ -130,12 +130,12 @@ public class HomeActivity_Ticket_PickEnd extends AppCompatActivity{
     }
 
     public void initDataList(){
-        mDataList=new ArrayList<ItemStationLineData>();
-        mDataList.add(new ItemStationLineData("一号线"));
-        mDataList.add(new ItemStationLineData("二号线"));
-        mDataList.add(new ItemStationLineData("三号线"));
-        mDataList.add(new ItemStationLineData("四号线"));
-        mDataList.add(new ItemStationLineData("五号线"));
+        mDataList=new ArrayList<itemStationLineData>();
+        mDataList.add(new itemStationLineData("一号线"));
+        mDataList.add(new itemStationLineData("二号线"));
+        mDataList.add(new itemStationLineData("三号线"));
+        mDataList.add(new itemStationLineData("四号线"));
+        mDataList.add(new itemStationLineData("五号线"));
     }
 
     /**

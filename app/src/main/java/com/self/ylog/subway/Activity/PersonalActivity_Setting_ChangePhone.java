@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.self.ylog.subway.R;
 
@@ -23,14 +22,14 @@ public class PersonalActivity_Setting_ChangePhone extends AppCompatActivity{
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
+    private ImageView mIconBack;
     /**
      * @control 主界面控件
      * */
-    private EditText mEditText_Personal_ChangePhone_Tele;
-    private EditText mEditText_Personal_ChangePhone_VerifyCode;
-    private Button mButton_Personal_ChangePhone_Get_VerifyCode;
-    private Button mButton_Personal_ChangePhone;
+    private EditText mEditTextPersonalChangePhoneTele;
+    private EditText mEditTextPersonalChangePhoneVerifyCode;
+    private Button mButtonPersonalChangePhoneGetVerifyCode;
+    private Button mButtonPersonalChangePhone;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,24 +43,24 @@ public class PersonalActivity_Setting_ChangePhone extends AppCompatActivity{
      *  findViewById
      * */
     public void initView(){
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PersonalActivity_Setting_ChangePhone.this.finish();
             }
         });
-        mEditText_Personal_ChangePhone_Tele=(EditText) findViewById(R.id.edittext_personal_changephone_tele);
-        mEditText_Personal_ChangePhone_VerifyCode=(EditText) findViewById(R.id.edittext_personal_changephone_verifycode);
-        mButton_Personal_ChangePhone_Get_VerifyCode=(Button) findViewById(R.id.button_personal_changephone_get_verifycode);
-        mButton_Personal_ChangePhone_Get_VerifyCode.setOnClickListener(new View.OnClickListener() {
+        mEditTextPersonalChangePhoneTele =(EditText) findViewById(R.id.edittext_personal_changephone_tele);
+        mEditTextPersonalChangePhoneVerifyCode =(EditText) findViewById(R.id.edittext_personal_changephone_verifycode);
+        mButtonPersonalChangePhoneGetVerifyCode =(Button) findViewById(R.id.button_personal_changephone_get_verifycode);
+        mButtonPersonalChangePhoneGetVerifyCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getVerifyCode();
             }
         });
-        mButton_Personal_ChangePhone=(Button) findViewById(R.id.button_personal_changephone);
-        mButton_Personal_ChangePhone.setOnClickListener(new View.OnClickListener() {
+        mButtonPersonalChangePhone =(Button) findViewById(R.id.button_personal_changephone);
+        mButtonPersonalChangePhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 changePhone();
@@ -96,7 +95,7 @@ public class PersonalActivity_Setting_ChangePhone extends AppCompatActivity{
         //需要修改的新手机号和验证码
         String tele;
         String verifyCode;
-        tele=mEditText_Personal_ChangePhone_Tele.getText().toString();
+        tele= mEditTextPersonalChangePhoneTele.getText().toString();
         //获取手机验证码
     }
 

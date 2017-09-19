@@ -9,13 +9,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import static com.self.ylog.subway.Utils.DebugTag.BUYSTATIONDATA;
 import static com.self.ylog.subway.Utils.StationConstant.*;
 import com.self.ylog.subway.Adapter.RecyclerViewStationLineAdapter;
 import com.self.ylog.subway.R;
-import com.self.ylog.subway.Utils.ItemStationLineData;
+import com.self.ylog.subway.Utils.itemStationLineData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +30,7 @@ public class HomeActivity_Ticket_Content extends AppCompatActivity{
     private Intent mGetDataIntent;
     private RecyclerView mRecyclerView;
     private RecyclerViewStationLineAdapter mAdapter;
-    private List<ItemStationLineData> mDataList;
+    private List<itemStationLineData> mDataList;
 
     //起始站线路索引
     private String mStartSubwayIndex;
@@ -56,7 +55,7 @@ public class HomeActivity_Ticket_Content extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_ticket_content);
         getIntentExtra();
-        initview();
+        initView();
     }
 
     public void getIntentExtra(){
@@ -91,12 +90,12 @@ public class HomeActivity_Ticket_Content extends AppCompatActivity{
         Log.d(BUYSTATIONDATA, "获取终点站站名数据: "+ mEndStationLabel);
     }
 
-    public void initview(){
-        init_RecyclerView();
+    public void initView(){
+        initRecyclerView();
     }
 
-    public void init_RecyclerView(){
-        initdata();
+    public void initRecyclerView(){
+        initData();
         mRecyclerView=(RecyclerView) findViewById(R.id.station_recyclerview);
         mAdapter =new RecyclerViewStationLineAdapter(getContext(),mDataList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -150,29 +149,29 @@ public class HomeActivity_Ticket_Content extends AppCompatActivity{
         return mEndSubwayIndex==null ? Boolean.TRUE:Boolean.FALSE;
     }
 
-    public void initdata(){
+    public void initData(){
         if (mStartSubwayLabel.equals("二号线")){
-            mDataList=new ArrayList<ItemStationLineData>();
-            mDataList.add(new ItemStationLineData("后卫寨"));
-            mDataList.add(new ItemStationLineData("三桥"));
-            mDataList.add(new ItemStationLineData("阿房路"));
-            mDataList.add(new ItemStationLineData("汉城路"));
-            mDataList.add(new ItemStationLineData("洒金桥"));
-            mDataList.add(new ItemStationLineData("五路口"));
-            mDataList.add(new ItemStationLineData("朝阳门"));
-            mDataList.add(new ItemStationLineData("万寿路"));
-            mDataList.add(new ItemStationLineData("纺织城"));
+            mDataList=new ArrayList<itemStationLineData>();
+            mDataList.add(new itemStationLineData("后卫寨"));
+            mDataList.add(new itemStationLineData("三桥"));
+            mDataList.add(new itemStationLineData("阿房路"));
+            mDataList.add(new itemStationLineData("汉城路"));
+            mDataList.add(new itemStationLineData("洒金桥"));
+            mDataList.add(new itemStationLineData("五路口"));
+            mDataList.add(new itemStationLineData("朝阳门"));
+            mDataList.add(new itemStationLineData("万寿路"));
+            mDataList.add(new itemStationLineData("纺织城"));
         } else {
-            mDataList = new ArrayList<ItemStationLineData>();
-            mDataList.add(new ItemStationLineData("北客站"));
-            mDataList.add(new ItemStationLineData("运动公园"));
-            mDataList.add(new ItemStationLineData("市图书馆"));
-            mDataList.add(new ItemStationLineData("大明宫西"));
-            mDataList.add(new ItemStationLineData("安远门"));
-            mDataList.add(new ItemStationLineData("钟楼"));
-            mDataList.add(new ItemStationLineData("小寨"));
-            mDataList.add(new ItemStationLineData("会展中心"));
-            mDataList.add(new ItemStationLineData("韦曲南"));
+            mDataList = new ArrayList<itemStationLineData>();
+            mDataList.add(new itemStationLineData("北客站"));
+            mDataList.add(new itemStationLineData("运动公园"));
+            mDataList.add(new itemStationLineData("市图书馆"));
+            mDataList.add(new itemStationLineData("大明宫西"));
+            mDataList.add(new itemStationLineData("安远门"));
+            mDataList.add(new itemStationLineData("钟楼"));
+            mDataList.add(new itemStationLineData("小寨"));
+            mDataList.add(new itemStationLineData("会展中心"));
+            mDataList.add(new itemStationLineData("韦曲南"));
         }
     }
 

@@ -31,11 +31,11 @@ public class LifeFragment extends android.support.v4.app.Fragment implements Vie
      * 定义控件item
      * @control subheader内控件
      * */
-    private RelativeLayout mLife_Favour;
-    private RelativeLayout mLife_Literature;
-    private RelativeLayout mLife_Travel;
-    private RelativeLayout mLife_Gourmet;
-    private RelativeLayout mLife_City;
+    private RelativeLayout mLifeFavour;
+    private RelativeLayout mLifeLiterature;
+    private RelativeLayout mLifeTravel;
+    private RelativeLayout mLifeGourmet;
+    private RelativeLayout mLifeCity;
     //recyclerview
     private RecyclerView mLifeRecyclerView;
     private RecyclerViewLifeAndSubwayAdapter mLifeRecyclerViewAdapter;
@@ -45,11 +45,11 @@ public class LifeFragment extends android.support.v4.app.Fragment implements Vie
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_life,container,false);
-        init_RecyclerView(view);
+        initRecyclerView(view);
         return view;
     }
 
-    public void init_RecyclerView(View view){
+    public void initRecyclerView(View view){
         initDataList();
         mLifeRecyclerView=(RecyclerView) view.findViewById(R.id.Life_RecyclerView);
         mLifeRecyclerViewAdapter =new RecyclerViewLifeAndSubwayAdapter(getContext(),mDataList);
@@ -72,16 +72,16 @@ public class LifeFragment extends android.support.v4.app.Fragment implements Vie
     }
 
     public void initView(View view){
-        mLife_Favour=(RelativeLayout) view.findViewById(R.id.life_favour);
-        mLife_Favour.setOnClickListener(this);
-        mLife_Literature=(RelativeLayout) view.findViewById(R.id.life_literature);
-        mLife_Literature.setOnClickListener(this);
-        mLife_Travel=(RelativeLayout) view.findViewById(R.id.life_travel);
-        mLife_Travel.setOnClickListener(this);
-        mLife_Gourmet=(RelativeLayout) view.findViewById(R.id.life_gourmet);
-        mLife_Gourmet.setOnClickListener(this);
-        mLife_City=(RelativeLayout) view.findViewById(R.id.life_city);
-        mLife_City.setOnClickListener(this);
+        mLifeFavour =(RelativeLayout) view.findViewById(R.id.life_favour);
+        mLifeFavour.setOnClickListener(this);
+        mLifeLiterature =(RelativeLayout) view.findViewById(R.id.life_literature);
+        mLifeLiterature.setOnClickListener(this);
+        mLifeTravel =(RelativeLayout) view.findViewById(R.id.life_travel);
+        mLifeTravel.setOnClickListener(this);
+        mLifeGourmet =(RelativeLayout) view.findViewById(R.id.life_gourmet);
+        mLifeGourmet.setOnClickListener(this);
+        mLifeCity =(RelativeLayout) view.findViewById(R.id.life_city);
+        mLifeCity.setOnClickListener(this);
     }
 
     @Override

@@ -22,13 +22,13 @@ public class PersonalActivity_Feedback extends AppCompatActivity{
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Cancel;
+    private ImageView mIconCancel;
     /**
      * @control 主界面控件
      * */
-    private EditText mEditText_Feedback_Content;
-    private EditText mEditText_Feedback_Contact;
-    private Button mButton_Feedback_Submit;
+    private EditText mEditTextFeedbackContent;
+    private EditText mEditTextFeedbackContact;
+    private Button mButtonFeedbackSubmit;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,20 +42,20 @@ public class PersonalActivity_Feedback extends AppCompatActivity{
      *  findViewById
      * */
     public void initView(){
-        mIcon_Cancel=(ImageView) findViewById(R.id.icon_cancel);
-        mIcon_Cancel.setOnClickListener(new View.OnClickListener() {
+        mIconCancel =(ImageView) findViewById(R.id.icon_cancel);
+        mIconCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PersonalActivity_Feedback.this.finish();
             }
         });
-        mEditText_Feedback_Content=(EditText) findViewById(R.id.edittext_feedback_content);
-        mEditText_Feedback_Contact=(EditText) findViewById(R.id.edittext_feedback_contact);
-        mButton_Feedback_Submit=(Button) findViewById(R.id.button_feedback_submit);
-        mButton_Feedback_Submit.setOnClickListener(new View.OnClickListener() {
+        mEditTextFeedbackContent =(EditText) findViewById(R.id.edittext_feedback_content);
+        mEditTextFeedbackContact =(EditText) findViewById(R.id.edittext_feedback_contact);
+        mButtonFeedbackSubmit =(Button) findViewById(R.id.button_feedback_submit);
+        mButtonFeedbackSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SubmitMessage();
+                submitMessage();
             }
         });
     }
@@ -82,12 +82,12 @@ public class PersonalActivity_Feedback extends AppCompatActivity{
     /**
      * 提交反馈信息
      * */
-    private void SubmitMessage(){
+    private void submitMessage(){
         //反馈信息和联系方式
         String feedback_content;
         String feedback_contact;
-        feedback_content=mEditText_Feedback_Content.getText().toString();
-        feedback_contact=mEditText_Feedback_Contact.getText().toString();
+        feedback_content= mEditTextFeedbackContent.getText().toString();
+        feedback_contact= mEditTextFeedbackContact.getText().toString();
         //联网提交反馈信息
     }
 }

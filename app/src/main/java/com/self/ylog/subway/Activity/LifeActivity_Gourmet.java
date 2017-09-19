@@ -27,7 +27,7 @@ public class LifeActivity_Gourmet extends AppCompatActivity{
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
+    private ImageView mIconBack;
     private RecyclerView mLifeGourmetRecyclerView;
     private RecyclerViewLifeAndSubwayAdapter mLifeGourmetRecyclerViewAdapter;
     private List<ItemNewsData> mDataList;
@@ -37,10 +37,10 @@ public class LifeActivity_Gourmet extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_life_gourmet);
         initView();
-        init_RecyclerView();
+        initRecyclerView();
     }
 
-    public void init_RecyclerView(){
+    public void initRecyclerView(){
         initDataList();
         mLifeGourmetRecyclerView=(RecyclerView) findViewById(R.id.Life_Gourmet_RecyclerView);
         mLifeGourmetRecyclerViewAdapter=new RecyclerViewLifeAndSubwayAdapter(getContext(),mDataList);
@@ -60,8 +60,8 @@ public class LifeActivity_Gourmet extends AppCompatActivity{
      *  findViewById
      * */
     public void initView(){
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 LifeActivity_Gourmet.this.finish();

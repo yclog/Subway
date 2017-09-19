@@ -21,18 +21,18 @@ public class PersonalActivity_AboutUs extends AppCompatActivity{
      * 定义控件item
      * @control titlebar内控件
      * */
-    private ImageView mIcon_Back;
+    private ImageView mIconBack;
     /**
      * @control 主界面控件
      * */
-    private TextView mTextview_version_code;
+    private TextView mTextViewVersionCode;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_aboutus);
         initView();
-        GetVersionCode();
+        getVersionCode();
     }
 
     /**
@@ -40,14 +40,14 @@ public class PersonalActivity_AboutUs extends AppCompatActivity{
      *  findViewById
      * */
     public void initView(){
-        mIcon_Back=(ImageView) findViewById(R.id.icon_back);
-        mIcon_Back.setOnClickListener(new View.OnClickListener() {
+        mIconBack =(ImageView) findViewById(R.id.icon_back);
+        mIconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PersonalActivity_AboutUs.this.finish();
             }
         });
-        mTextview_version_code=(TextView) findViewById(R.id.textview_version_code);
+        mTextViewVersionCode =(TextView) findViewById(R.id.textview_version_code);
     }
     /**
      * 重写返回键
@@ -72,7 +72,7 @@ public class PersonalActivity_AboutUs extends AppCompatActivity{
     /**
      * 获取当前APP版本号
      * */
-    private void GetVersionCode(){
+    private void getVersionCode(){
 
     }
 }

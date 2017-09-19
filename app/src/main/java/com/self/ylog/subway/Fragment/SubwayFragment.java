@@ -32,12 +32,12 @@ public class SubwayFragment extends android.support.v4.app.Fragment implements V
      * 定义控件item
      * @control subheader内控件
      * */
-    private RelativeLayout mSubway_News;
-    private RelativeLayout mSubway_Info;
-    private RelativeLayout mSubway_Price;
-    private RelativeLayout mSubway_Law;
-    private RelativeLayout mSubway_Secure;
-    private RelativeLayout mSubway_Bytrain;
+    private RelativeLayout mSubwayNews;
+    private RelativeLayout mSubwayInfo;
+    private RelativeLayout mSubwayPrice;
+    private RelativeLayout mSubwayLaw;
+    private RelativeLayout mSubwaySecure;
+    private RelativeLayout mSubwayByTrain;
     //Recyclerview定义
     private RecyclerView mSubwayRecyclerView;
     private RecyclerViewLifeAndSubwayAdapter mSubwayRecyclerViewAdaper;
@@ -47,26 +47,26 @@ public class SubwayFragment extends android.support.v4.app.Fragment implements V
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_subway,container,false);
-        init_RecyclerView(view);
+        initRecyclerView(view);
         return view;
     }
 
     public void initView(View view){
-        mSubway_News=(RelativeLayout) view.findViewById(R.id.subway_news);
-        mSubway_News.setOnClickListener(this);
-        mSubway_Price=(RelativeLayout) view.findViewById(R.id.subway_price);
-        mSubway_Price.setOnClickListener(this);
-        mSubway_Info=(RelativeLayout) view.findViewById(R.id.subway_info);
-        mSubway_Info.setOnClickListener(this);
-        mSubway_Law=(RelativeLayout) view.findViewById(R.id.subway_law);
-        mSubway_Law.setOnClickListener(this);
-        mSubway_Secure=(RelativeLayout) view.findViewById(R.id.subway_secure);
-        mSubway_Secure.setOnClickListener(this);
-        mSubway_Bytrain=(RelativeLayout) view.findViewById(R.id.subway_bytrain);
-        mSubway_Bytrain.setOnClickListener(this);
+        mSubwayNews =(RelativeLayout) view.findViewById(R.id.subway_news);
+        mSubwayNews.setOnClickListener(this);
+        mSubwayPrice =(RelativeLayout) view.findViewById(R.id.subway_price);
+        mSubwayPrice.setOnClickListener(this);
+        mSubwayInfo =(RelativeLayout) view.findViewById(R.id.subway_info);
+        mSubwayInfo.setOnClickListener(this);
+        mSubwayLaw =(RelativeLayout) view.findViewById(R.id.subway_law);
+        mSubwayLaw.setOnClickListener(this);
+        mSubwaySecure =(RelativeLayout) view.findViewById(R.id.subway_secure);
+        mSubwaySecure.setOnClickListener(this);
+        mSubwayByTrain =(RelativeLayout) view.findViewById(R.id.subway_bytrain);
+        mSubwayByTrain.setOnClickListener(this);
     }
 
-    public void init_RecyclerView(View view){
+    public void initRecyclerView(View view){
         initDataList();
         mSubwayRecyclerView=(RecyclerView) view.findViewById(R.id.Subway_RecyclerView);
         mSubwayRecyclerViewAdaper=new RecyclerViewLifeAndSubwayAdapter(getContext(),mDataList);
